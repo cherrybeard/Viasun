@@ -1,0 +1,131 @@
+include ./base/sidenav.jade
+include ./base/hotels.jade
+include ./base/banners.jade
+include ./base/showcases.jade
+include ./base/search.jade
+include ./base/footers.jade
+
+mixin hotel-short(image, rating, name, resort, stars)
+	.media.hotel-short
+		.media-image
+			img(src="http://hotels.sletat.ru/i/p/"+image+"_0_60_90_1.jpg")
+		.media-content
+			.hotel-stars
+				span.glyphicon.glyphicon-star
+				span.glyphicon.glyphicon-star
+				if stars>2
+					span.glyphicon.glyphicon-star
+				if stars>3
+					span.glyphicon.glyphicon-star
+				if stars>4
+					span.glyphicon.glyphicon-star
+			h4.hotel-name
+				a(href="hotel.html")= name
+			p
+				span.hotel-resort= resort
+				span.hotel-rating.hotel-rating-good= 'Рейтинг: ' + rating
+			
+doctype html
+head
+	title Viasun2 — Курорт
+	include ./base/head.jade
+body
+	+sidenav-country("Hotels")
+	include ./base/navbar.jade
+	.header.header-image(style="background-image: url(./img/headers/austria.jpg);")
+		.container
+			ol.breadcrumb
+				li
+					a(href="./countries.html") Страны
+				li
+					a(href="./country.html") Австрия
+			h1 Отели Австрии
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						+search-hotel
+						.block.hotels-shortlist
+							h2 Лучшие отели Австрии
+							.row
+								.col-sm-8
+									h3
+										a(href="hotels-search.html") Отели Австрии 5 звёзд
+									.medialist
+										+hotel-short("11323", "9.2", "Delta Hotel Vienna", "Вена", 5)
+										+hotel-short("1175", "8.0", "Hotel Alexander Wien", "Вена", 5)
+										+hotel-short("2182", "8.0", "Austria Trend Hotel Ananas", "Зальцбург", 5)
+										+hotel-short("18521", "9.2", "Holiday Inn Vienna City", "Вена", 5)
+								.col-sm-8
+									h3
+										a(href="hotels-search.html") Отели Австрии 4 звёзды
+									.medialist
+										+hotel-short("20293", "9.7", "InterCityHotel Wien", "Вена", 4)
+										+hotel-short("347", "9.3", "ACHAT Plaza Zum Hirschen", "Зальцбург", 4)
+										+hotel-short("66035", "9.3", "Activ Hotel Fottinger", "Зальцкаммергут", 4)
+										+hotel-short("741", "9.7", "Airporthotel Salzburg", "Зальцбург", 4)
+								.col-sm-8
+									h3
+										a(href="hotels-search.html") Отели Австрии 3 звёзды
+									.medialist
+										+hotel-short("72458", "9.2", "25hours Hotel Vienna", "Вена", 3)
+										+hotel-short("60896", "8.1", "Actilingua", "Вена", 3)
+										+hotel-short("435", "9.4", "Adagio City Aparthotel Wien Zentrum", "Вена", 3)
+										+hotel-short("496", "9.7", "Adlon", "Вена", 3)
+								.col-sm-8
+									h3
+										a(href="hotels-search.html") Отели Австрии 2 звёзды
+									.medialist
+										+hotel-short("289", "4.9", "Academia", "Вена", 2)
+										+hotel-short("5823", "7.1", "Beta Design Hotel", "Вена", 2)
+										+hotel-short("74378", "9.3", "Boardinghouse Mitterweg", "Инсбрук", 2)
+										+hotel-short("31697", "9.7", "Fruehstueckspension Haus am Dorfplatz", "Зальцбург", 2)
+						.block
+							.row
+								.col-sm-8
+									h3 Рейтинг отелей мира
+									ul.list-unstyled.columns-2
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Австрии
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Германии
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Польши
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Франции
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Чехии
+									h3 Отели похожих стран
+									ul.list-unstyled.columns-2
+										li
+											a.countryflag.countryflag-germany(href="./hotels.html") Отели Германии
+										li
+											a.countryflag.countryflag-poland(href="./hotels.html") Отели Польши
+										li
+											a.countryflag.countryflag-france(href="./hotels.html") Отели Фрации
+										li
+											a.countryflag.countryflag-czech(href="./hotels.html") Отели Чехии
+								.col-sm-8
+									h3 Отели популярных курортов Австрии
+									ul.list-unstyled.columns-2
+										li
+											a(href="./hotels-country.html") Отели Вены
+										li
+											a(href="./hotels-country.html") Отели Зальцбурга
+										li
+											a(href="./hotels-country.html") Отели Каринтии
+										li
+											a(href="./hotels-country.html") Отели Инсбрука
+						.block.block-stroked
+							h3 Австрия по&nbsp;сезонам
+							+tours-seasons
+						+search
+				.col-md-4.hidden-sm
+					.sidebar
+						+banner-expert
+	+footer-country
+	+footer-base
+	include ./base/modal-city.jade
+	include ./base/scripts.jade
+	include ./base/scripts-search.jade

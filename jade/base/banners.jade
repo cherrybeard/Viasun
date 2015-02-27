@@ -1,0 +1,36 @@
+mixin banner-expert(recommended)
+	.banner.banner-sidebar.expert-banner(class=(recommended ? "expert-recommended" : ""))
+		h3 Эксперт по&nbsp;Австрии
+		.expert-photo
+			img(src="http://storage.viasun.ru/agency/57ydtyqnj5.jpg")
+		.expert-name
+			a(href="./expert.html") Влада
+		a.expert-agency(href="./agency.html") Тигра Тур
+		.expert-phone.phone-hidden +7 (812) 456-58-42
+			button.btn.btn-gray.btn-sm(data-toggle="phone") показать
+		button.btn.btn-primary.btn-lg(type="button") Задать вопрос
+
+mixin banner-agency
+	.banner.banner-sidebar.banner-agency
+		img(src="http://storage.viasun.ru/agency/kt6lxzj22d.png")
+		p.agency-address Тверская, 18, к. 1, офис 308
+		p.agency-phone.phone-hidden +7 (495) 995-24-24
+			button.btn.btn-gray.btn-sm(data-toggle="phone") показать
+		button.btn.btn-lg.btn-warning.btn-fullwidth(type="button") Оставить заявку
+
+mixin bigbanner
+	.bigbanner.bigbanner-hidden
+		.container
+			button.close(type="button", data-dismiss="bigbanner")
+				span.helioicon.helioicon-close
+			img.bigbanner-image(src="./img/bigbanner-camel.png")
+			h2 Устали искать путешествие?
+			p Напишите нам и&nbsp;получите десятки индивидуальных предложений!
+			form.form-inline
+				.form-group
+					label.sr-only(for="bigbanner-name") Ваше имя
+					input#bigbanner-name.form-control.input-lg(type="text", placeholder="Ваше имя")
+				.form-group
+					label.sr-only(for="bigbanner-phone") Телефон
+					input#bigbanner-name.form-control.input-lg(type="text", placeholder="Телефон")
+				button.btn.btn-primary.btn-xl(type="submit") Отправить

@@ -1,0 +1,141 @@
+include ./base/sidenav.jade
+include ./base/banners.jade
+include ./base/footers.jade
+
+mixin tour(starts, weekday, nights, placement, apartment, food, price)
+	.media
+		.tour-starts
+			p!= starts
+			p.small= weekday
+		.tour-nights!= nights
+		.tour-apartment
+			p= placement
+			p.small= apartment
+		.tour-food= food
+		.tour-price
+			a.text-price(href="./tour.html")!= price+'&nbsp;'
+				span.helioicon.helioicon-rub
+
+mixin hotel(id, image, name, reviews, rating, price, tours)
+	.media
+		.media-image
+			img(src="http://hotels.sletat.ru/i/p/"+image+"_0_80_120_1.jpg")
+		.media-content.media-content-expandable
+			.media-static
+				.hotel-info
+					.hotel-title
+						h3
+							a(href="./tour.html")= name 
+							span.hotel-stars
+								span.glyphicon.glyphicon-star
+								span.glyphicon.glyphicon-star
+								span.glyphicon.glyphicon-star
+								span.glyphicon.glyphicon-star
+					ul.hotel-details.list-inline
+						li Вена
+						li Рейтинг: 
+							span.tour-rating-good= rating
+						li= 'Отзывов: '+reviews
+				.hotel-price
+					.hotel-price-starts
+						от 
+						a.text-price(href="./tour.html")!= price+'&nbsp;'
+							span.helioicon.helioicon-rub
+					.hotel-count!= tours
+				.media-expand(data-toggle="collapse", data-target='.tour-'+id)
+			.media-expandable.collapse(class='tour-'+id)
+				.medialist.medialist-striped.tours-shortlist
+					.medialist-legend
+						.tour-starts Вылет
+						.tour-nights Длительность
+						.tour-apartment Номер
+						.tour-food Питание
+						.tour-price Стоимость
+					if block
+						block
+	
+
+doctype html
+head
+	title Viasun2 — Туры в Вену
+	include ./base/head.jade
+body.body-sidenav.body-bigbanner
+	+sidenav-country("Tours")
+	+bigbanner
+	include ./base/navbar.jade
+	.header
+		.container
+			h1 Туры в&nbsp;Вену
+			p Найдено 400 туров в 36 отелей 
+				span.text-light для 2 взрослых и 1 ребёнка; вылет 28 янв — 3 фев; на 14–21 ночей. 
+				a.btn-inline(href="#") Изменить
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block
+							.medialist.tours-mainsearch
+								+hotel('1', '2182', 'Austria Trend Hotel Ananas', '12', '7.9', '66&nbsp;842', '4&nbsp;тура')
+									+tour('3&nbsp;февраля', 'вторник', '7&nbsp;ночей', 'DBL', 'Standart', 'BB', '66&nbsp;842')
+									+tour('5&nbsp;февраля', 'четверг', '7&nbsp;ночей', 'DBL', 'Standart', 'BB', '66&nbsp;842')
+									+tour('7&nbsp;февраля', 'суббота', '7&nbsp;ночей', 'DBL', 'Standart', 'BB', '66&nbsp;842')
+									+tour('10&nbsp;февраля', 'вторник', '7&nbsp;ночей', 'DBL', 'Standart', 'BB', '66&nbsp;842')
+								+hotel('2', '4058', 'Austria Trend Hotel Lassalle', '17', '4.0', '71&nbsp;005', '2&nbsp;тура')
+									+tour('5&nbsp;февраля', 'четверг', '7&nbsp;ночей', 'DBL', 'Standart', 'BB', '71&nbsp;005')
+									+tour('7&nbsp;февраля', 'суббота', '7&nbsp;ночей', 'DBL', 'Standart', 'BB', '71&nbsp;005')
+								+hotel('3', '13603', 'Eventhotel Pyramide', '40', '7.5', '71&nbsp;974', '5&nbsp;туров')
+									+tour('6&nbsp;февраля', 'пятница', '6&nbsp;ночей', 'DBL', 'Standart', 'BB', '71&nbsp;974')
+									+tour('11&nbsp;февраля', 'среда', '6&nbsp;ночей', 'DBL', 'Standart', 'BB', '71&nbsp;974')
+									+tour('14&nbsp;февраля', 'суббота', '6&nbsp;ночей', 'DBL', 'Standart', 'BB', '71&nbsp;974')
+									+tour('16&nbsp;февраля', 'понедельник', '6&nbsp;ночей', 'DBL', 'Standart', 'BB', '71&nbsp;974')
+									+tour('17&nbsp;февраля', 'вторник', '6&nbsp;ночей', 'DBL', 'Standart', 'BB', '71&nbsp;974')
+									+tour('22&nbsp;февраля', 'воскресенье', '6&nbsp;ночей', 'DBL', 'Standart', 'BB', '71&nbsp;974')
+								+hotel('4', '4056', 'Austria Trend Hotel Bosei', '2', '9.5', '72&nbsp;455', '3&nbsp;тура')
+									+tour('13&nbsp;февраля', 'пятница', '6&nbsp;ночей', 'DBL', 'Standart', 'BB', '72&nbsp;455')
+									+tour('13&nbsp;февраля', 'пятница', '6&nbsp;ночей', 'DBL', 'Standart', 'BB', '72&nbsp;615')
+									+tour('13&nbsp;февраля', 'пятница', '6&nbsp;ночей', 'DBL', 'Standart', 'BB', '73&nbsp;976')
+								+hotel('5', '4054', 'Austria Trend Donauzentrum', '34', '10.0', '73&nbsp;976', '2&nbsp;тура')
+									+tour('13&nbsp;февраля', 'пятница', '6&nbsp;ночей', 'DBL', 'Standart', 'BB', '73&nbsp;976')
+									+tour('13&nbsp;февраля', 'пятница', '6&nbsp;ночей', 'DBL', 'Standart', 'BB', '74&nbsp;216')
+								+hotel('6', '4058', 'Austria Trend Hotel Lassalle', '28', '4.0', '74&nbsp;456', '2&nbsp;тура')
+									+tour('13&nbsp;февраля', 'пятница', '6&nbsp;ночей', 'DBL', 'Standart', 'BB', '74&nbsp;456')
+									+tour('13&nbsp;февраля', 'пятница', '6&nbsp;ночей', 'DBL', 'Standart', 'BB', '74&nbsp;616')
+						.block
+							nav.nav-pagination
+								a.disabled(href="./tours.html") ←&nbsp;Предыдущая
+								ul.pagination
+									li.active
+										a(href="#") 1
+									li
+										a(href="#") 2
+									li
+										a(href="#") 3
+									li
+										a(href="#") 4
+									li
+										a(href="#") 5
+									li
+										a(href="#") 7
+									li
+										a(href="#") 8
+									li
+										a(href="#") 9
+									li
+										a(href="#") 10
+									li.disabled
+										a(href="#") ...
+									li
+										a(href="#") 31
+								a(href="./tours.html") Следующая&nbsp;→
+				.col-md-4.hidden-sm
+					.sidebar
+						+banner-expert
+				
+	
+	+footer-country
+	+footer-base
+	+modal-search
+	include ./base/modal-city.jade
+	include ./base/scripts.jade
+	script(src="./js/tours.js")

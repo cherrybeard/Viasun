@@ -1,0 +1,179 @@
+include ./base/sidenav.jade
+include ./base/hotels.jade
+include ./base/banners.jade
+include ./base/footers.jade
+
+mixin tour(image, name, starts, nights, food, price)
+	.tour
+		.tour-image
+			img(src="http://hotels.sletat.ru/i/p/"+image+"_0_35_50_1.jpg")
+		.tour-title
+			a(href="./tour.html")= name
+		.tour-starts!= starts
+		.tour-nights!= nights+"&nbsp;ночей"
+		.tour-food= food
+		.tour-price
+			a.text-price(href="./tour.html")!= price+"&nbsp;"
+				span.helioicon.helioicon-rub
+
+doctype html
+head
+	title Viasun2 — Курорт
+	include ./base/head.jade
+body
+	+sidenav-country("Resorts")
+	include ./base/navbar.jade
+	.header.header-image(style="background-image: url(./img/headers/austria.jpg);")
+		.container
+			ol.breadcrumb
+				li
+					a(href="./countries.html") Страны
+				li
+					a(href="./country.html") Австрия
+				li
+					a(href="./resorts.html") Курорты
+			h1 Вена
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block
+							h2 Туры в&nbsp;Вену из&nbsp;Новосибирска
+							.tabpanel
+								ul.nav.nav-lines
+									li.active
+										a(href="#", data-toggle="tab", data-target=".tab-from-nsk") Вылет из&nbsp;Новосибирска
+									li
+										a(href="#", data-toggle="tab", data-target=".tab-from-msk") из&nbsp;Москвы
+								.tab-content
+									.tab-pane.tab-from-nsk.active
+										.medialist.tours-showcase
+											.medialist-legend
+												.media-image.tours-showcase-stars
+												.media-content
+													.tour
+														.tour-image
+														.tour-title
+														.tour-starts Вылет
+														.tour-nights Длительность
+														.tour-food Питание
+														.tour-price Цена для&nbsp;двух&nbsp;взр.
+											.media
+												.media-image.tours-showcase-stars
+													p.text-warning
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+												.media-content
+													+tour("1175", "Hotel Alexander Wien", "25&nbsp;января", "7", "BB", "81&nbsp;378")
+													+tour("2182", "Austria Trend Hotel Ananas", "31&nbsp;января", "7", "BB", "87&nbsp;646")
+											.media
+												.media-image.tours-showcase-stars
+													p.text-warning
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+												.media-content
+													+tour("18521", "Holiday Inn Vienna City", "31&nbsp;января", "7", "BB", "93&nbsp;962")
+													+tour("20293", "InterCityHotel Wien", "7&nbsp;марта", "7", "BB", "97&nbsp;121")
+											.media
+												.media-image.tours-showcase-stars
+													p.text-warning
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+												.media-content
+													+tour("20403", "InterContinental Wien", "22&nbsp;февраля", "7", "BB", "145&nbsp;736")
+													+tour("43896", "Vienna Marriott", "1&nbsp;февраля", "7", "BB", "170&nbsp;670")
+									.tab-pane.tab-from-msk
+										.medialist.tours-showcase
+											.medialist-legend
+												.media-image.tours-showcase-stars
+												.media-content
+													.tour
+														.tour-image
+														.tour-title
+														.tour-starts Вылет
+														.tour-length Длительность
+														.tour-food Питание
+														.tour-price Цена для&nbsp;двух&nbsp;взр.
+											.media
+												.media-image.tours-showcase-stars
+													p.text-warning
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+												.media-content
+													+tour("23968", "Lenas Donau", "25&nbsp;января", "6", "BB", "45&nbsp;195")
+													+tour("44433", "Villa Hirschen Hotel", "31&nbsp;января", "7", "BB", "58&nbsp;725")
+											.media
+												.media-image.tours-showcase-stars
+													p.text-warning
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+												.media-content
+													+tour("73825", "Leonardo", "29&nbsp;января", "7", "BB", "61&nbsp;386")
+													+tour("26945", "Mercure Wien Westbahnhof", "7&nbsp;февраля", "6", "BB", "63&nbsp;980")
+											.media
+												.media-image.tours-showcase-stars
+													p.text-warning
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+														span.glyphicon.glyphicon-star
+												.media-content
+													+tour("18294", "Hilton Vienna", "29&nbsp;января", "6", "BB", "85&nbsp;503")
+													+tour("30302", "Pakat Suites Hotel", "1&nbsp;февраля", "6", "BB", "108&nbsp;367")
+							.btn.btn-warning.btn-xl.btn-fullwidth(type="button") Поиск туров в&nbsp;Вену
+						.block
+							.block-header
+								h2 Кратко о&nbsp;Вене
+								.block-header-nav
+									a(href="./tours.html") Туры
+									a(href="./hotels.html") Отели
+									a(href="./weather.html") Погода
+							p.lead Столица Австрии удивительно многогранна. Сюда приезжают, чтобы посмотреть на архитектурные достопримечательности, познакомиться со знаменитой венской оперой и просто для неспешных романтических прогулок. Вена – один из самых элегантных и очаровательных европейских городов – она всегда найдет, чем удивить и порадовать своих гостей, будь то уютная атмосфера кофеен или живописные виды Венского леса.
+							.slider-pro
+								.sp-slides
+									.sp-slide
+										img.sp-image(src="http://storage.viasun.ru/cities/gallery/austria-vienna-65ormf2c1q.jpg")
+									.sp-slide
+										img.sp-image(src="http://storage.viasun.ru/cities/gallery/austria-vienna-l5hlsziu4z.jpg")
+									.sp-slide
+										img.sp-image(src="http://storage.viasun.ru/cities/gallery/austria-vienna-47cso6m1od.jpg")
+									.sp-slide
+										img.sp-image(src="http://storage.viasun.ru/cities/gallery/austria-vienna-jcw35rjvxg.jpg")
+							.row
+								.col-sm-8
+									h3 Климат
+									p Климат Вены умеренный, субальпийский. Сюда лучше приезжать ранней осенью или поздней весной.
+									h3 Чем заняться?
+									p Культурная жизнь столицы Австрии не замирает ни на секунду – здесь открыты музеи, опера, художественные галереи, филармонии. Вена известна своими архитектурными достопримечательностями и магазинами. После продолжительных прогулок по городу нет ничего лучше, чем отдохнуть в Венском лесу, в котором находится местный зоопарк.
+									p Отдельно следует сказать о ресторанах Вены – в них можно попробовать не только традиционные блюда австрийской кухни, но и экзотические яства, приготовленные по рецептам других кухонь мира – тайской, мексиканской, китайской, индийской и многих других.
+									p Ночью сказочная Вена не засыпает, предлагая всем желающим провести время в клубах и барах.
+								.col-sm-8
+									h3 Что посмотреть?
+									p Мало кому из туристов удается осмотреть все местные достопримечательности за одну поездку. Прогулка по Вене превращается в увлекательное путешествие по страницам прошлого этого города.
+									p Одной из главных достопримечательностей столицы Австрии является императорский Дворец Хофбург, расположенный в самом центре города. Этот величественный дворцовый комплекс был построен в 15 веке и когда-то служил резиденцией Габсбургов. Внимание туристов привлекают также Дворец Шёнбрунн и Дворец Лихтенштейн, в котором сегодня располагается музей.
+									p Нельзя обойти вниманием Собор Святого Стефана. Этот готический собор, заложенный в 12 веке, несколько раз перестраивался, однако и по сей день сохранил свой неповторимый облик. Собор Святого Стефана является национальным символом столицы Австрии и всей страны.
+							h3 Вена из&nbsp;Москвы 2015 / 2016
+							p На нашем портале вы найдете цены на путевки и горящие туры в Вену из Москвы. 
+							p Если нужна помощь, то менеджеры агентств Москвы помогут организовать отдых в Вене, учитывая ваши пожелания. 
+								a(href="./getaquote.html") Просто оформите заявку
+								| . Индивидуальный подход гарантируем!
+						include ./base/adverts.jade
+						+hotels-showcase(true)
+				.col-md-4.hidden-sm
+					.sidebar
+						+banner-expert
+	+footer-country
+	+footer-base
+	include ./base/modal-city.jade
+	include ./base/scripts.jade

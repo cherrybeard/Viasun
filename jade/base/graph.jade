@@ -1,0 +1,164 @@
+mixin graph-value(value, date)
+	.graph-value(data-value=value, data-id=date)
+		.graph-value-bar
+		.graph-value-date
+		.graph-value-weekday
+
+mixin graph
+	.graph
+		.graph-grid
+			.graph-level.graph-level-max
+				.graph-level-value
+				.graph-level-line
+			.graph-level.graph-level-mid
+				.graph-level-value
+				.graph-level-line
+			.graph-level.graph-level-min
+				.graph-level-value
+				.graph-level-line
+		.graph-values
+			.graph-group(data-name="2")
+				.graph-group-name
+					span
+				- var date = 18
+				+graph-value(44883, date++)
+				+graph-value(44883, date++)
+				+graph-value(44883, date++)
+				+graph-value(44883, date++)
+				+graph-value(44883, date++)
+				+graph-value(44883, date++)
+				+graph-value(45998, date++)
+				+graph-value(47094, date++)
+				+graph-value(48273, date++)
+				+graph-value(49379, date++)
+				+graph-value(50484, date++)
+			.graph-group(data-name="3")
+				.graph-group-name
+					span
+				- date = 1
+				+graph-value(0, date++)
+				+graph-value(54539, date++)
+				+graph-value(52474, date++)
+				+graph-value(52474, date++)
+				+graph-value(70971, date++)
+				+graph-value(73944, date++)
+				+graph-value(52474, date++)
+				+graph-value(52474, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(0, date++)
+				+graph-value(0, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				
+mixin graph-copy
+	.graph
+		.graph-grid
+			.graph-level.graph-level-max
+				.graph-level-value
+				.graph-level-line
+			.graph-level.graph-level-mid
+				.graph-level-value
+				.graph-level-line
+			.graph-level.graph-level-min
+				.graph-level-value
+				.graph-level-line
+		.graph-values
+			.graph-group(data-name="2")
+				.graph-group-name
+					span
+				- var date = 18
+				+graph-value(44883, date++)
+				+graph-value(44883, date++)
+				+graph-value(44883, date++)
+			.graph-group(data-name="3")
+				.graph-group-name
+					span
+				- date = 1
+				+graph-value(0, date++)
+				+graph-value(54539, date++)
+				+graph-value(52474, date++)
+				+graph-value(52474, date++)
+				+graph-value(70971, date++)
+				+graph-value(73944, date++)
+				+graph-value(52474, date++)
+				+graph-value(52474, date++)
+				+graph-value(54539, date++)
+				+graph-value(49379, date++)
+				+graph-value(44883, date++)
+				+graph-value(50484, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(0, date++)
+				+graph-value(0, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(44883, date++)
+				+graph-value(44883, date++)
+				+graph-value(45998, date++)
+				+graph-value(47094, date++)
+				+graph-value(48273, date++)
+				
+mixin graph-copy2
+	.graph
+		.graph-grid
+			.graph-level.graph-level-max
+				.graph-level-value
+				.graph-level-line
+			.graph-level.graph-level-mid
+				.graph-level-value
+				.graph-level-line
+			.graph-level.graph-level-min
+				.graph-level-value
+				.graph-level-line
+		.graph-values
+			.graph-group(data-name="2")
+				.graph-group-name
+					span
+				- var date = 18
+				+graph-value(44883, date++)
+				+graph-value(44883, date++)
+			.graph-group(data-name="3")
+				.graph-group-name
+					span
+				- date = 1
+				+graph-value(0, date++)
+				+graph-value(54539, date++)
+				+graph-value(52474, date++)
+				+graph-value(52474, date++)
+				+graph-value(70971, date++)
+				+graph-value(73944, date++)
+				+graph-value(52474, date++)
+				+graph-value(52474, date++)
+				+graph-value(54539, date++)
+				+graph-value(49379, date++)
+				+graph-value(44883, date++)
+				+graph-value(50484, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(0, date++)
+				+graph-value(0, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(54539, date++)
+				+graph-value(44883, date++)
+				+graph-value(54539, date++)
+				+graph-value(44883, date++)
+				+graph-value(44883, date++)
+				+graph-value(45998, date++)
+				+graph-value(47094, date++)
+				+graph-value(48273, date++)

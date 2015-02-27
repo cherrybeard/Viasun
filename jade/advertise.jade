@@ -1,0 +1,62 @@
+include ./base/sidenav.jade
+include ./base/banners.jade
+include ./base/footers.jade
+
+doctype html
+head
+	title Viasun2 — Объявление
+	include ./base/head.jade
+body
+	+sidenav-agency("Sales")
+	include ./base/navbar.jade
+	.header
+		.container
+			ol.breadcrumb
+				li
+					a(href="./agencies.html") Агентства
+				li
+					a(href="./agency.html") Coral Travel
+				li
+					a(href="./agency-advertises.html") Объявления
+			h1 Coral Travel
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block.block-plaintext
+							.row.stickem-container
+								.col-sm-4
+									img(src="http://storage.viasun.ru/motion/pd73ydxxma.jpg")
+								.col-sm-12
+									h2 Ранее бронирование от Coral
+
+									p Неповторимая атмосфера, лучшие цены для идеального отдыха! Бронируйте туры заранее и платите меньше!
+									p
+										strong Египет
+										|  — раннее бронирование!
+									p
+										strong Индия, Гоа
+										|  — раннее бронирование хорошая выгода!
+									p Горные лыжи — 
+										strong Австрия, Андорра, Турция
+										|   раннее бронирование!
+									p.strong Ловите момент! Компания Coral Travel рада предложить самые привлекательные предложения:
+									ul
+										li Туры в Египет — от 9 830 руб./чел.
+										li Туры в Тайланд — от 18 141 руб./чел.
+										li Туры на Мальдивы — от 42 564 руб./чел.
+										li Туры в ОАЭ — от 17 354 руб/чел.
+										li Туры в Турцию — от 9 053 руб/чел.
+										li Туры в Доминикану — от 43 036руб/чел.
+										li Туры в Болгарию — от 19 452 руб/чел.
+									p Закажите прямо сейчас! Всю информацию можете узнать у менеджеров по телефону: (495) 995-24-24
+									p Сайт: 
+										a(href="http://poisk-tour.com/index.html") http://poisk-tour.com/index.html
+						include ./base/adverts.jade
+				.col-md-4.hidden-sm
+					.sidebar
+						+banner-agency
+	+footer-base
+	include ./base/modal-city.jade
+	include ./base/scripts.jade

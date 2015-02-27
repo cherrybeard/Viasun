@@ -1,0 +1,373 @@
+include ./base/banners.jade
+include ./base/mapflow.jade
+include ./base/showcases.jade
+include ./base/search.jade
+include ./base/footers.jade
+
+mixin showcase-item(image, name, flag, resort1, price1, resort2, price2, resort3, price3)
+	.showcase-item
+		a(href="./country.html")
+			.showcase-image
+				img(src="http://storage.viasun.ru/countries/icon/"+image+".jpg")
+			.showcase-header
+				h3= name
+				span.countryflag(class="countryflag-"+flag)
+		.showcase-resort
+			a.showcase-resort-name(href="./resort.html")!= resort1
+			.showcase-resort-price от&nbsp;
+				a.text-price(href="./tours.html")!= price1+"&nbsp;"
+					span.helioicon.helioicon-rub
+		if resort2 != ""
+			.showcase-resort
+				a.showcase-resort-name(href="./resort.html")!= resort2
+				.showcase-resort-price от&nbsp;
+					a.text-price(href="./tours.html")!= price2+"&nbsp;"
+						span.helioicon.helioicon-rub
+		if resort3 != ""
+			.showcase-resort
+				a.showcase-resort-name(href="./resort.html")!= resort3
+				.showcase-resort-price от&nbsp;
+					a.text-price(href="./tours.html")!= price3+"&nbsp;"
+						span.helioicon.helioicon-rub
+
+mixin expert(recommended, image, name, agency, phone, phoneadd)
+	.sp-slide.expert(class=(recommended ? "expert-recommended" : ""))
+		.expert-photo
+			img(src="http://storage.viasun.ru/agency/"+image)
+		.expert-text
+			.expert-header
+				h2.expert-name
+					a(href="./expert.html")= name
+				span Эксперт агентства 
+					a(href="./agency.html")= agency
+			if block
+				.expert-info
+					block
+			.expert-actions
+				button.btn.btn-primary.btn-lg(type="button") Задать вопрос
+				.expert-phone.phone-hidden= phone
+					if phoneadd
+						|  
+						span.phone-additional= phoneadd
+					button.btn.btn-gray.btn-sm(data-toggle="phone") показать
+		.sp-thumbnail.expert-thumb(class=(recommended ? "expert-recommended" : ""))
+			.expert-photo
+				img(src="http://storage.viasun.ru/agency/thumb_"+image)
+			.expert-text
+				.expert-name= name
+				.expert-agency= agency
+
+doctype html
+head
+	title Viasun2 — Главная
+	include ./base/head.jade
+body
+	include ./base/navbar.jade
+	.header.header-intro
+		.header-shadow
+		.container
+			+search-main
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block
+							h2 Горящие туры из&nbsp;Новосибирска
+							.tabpanel
+								ul.nav.nav-lines
+									li.active
+										a(href="#", data-toggle="tab", data-target=".tab-from-nsk") Вылет из&nbsp;Новосибирска
+									li
+										a(href="#", data-toggle="tab", data-target=".tab-from-msk") из&nbsp;Москвы
+								.tab-content
+									.tab-pane.tab-from-nsk.active.showcase
+										+showcase-item("2uf5xevlkd", "Таиланд", "thailand", "Паттайя", "62&nbsp;884", "о.&nbsp;Пхукет", "68&nbsp;000", "", "")
+										+showcase-item("9cfz3q0eqq", "Вьетнам", "vietnam", "Нячанг", "67&nbsp;025", "", "", "", "")
+										+showcase-item("4oufqfcwp5", "Китай", "china", "о.&nbsp;Хайнань", "132&nbsp;052", "Гонконг", "163&nbsp;144", "", "")
+										+showcase-item("dwd97zapg7", "Франция", "france", "Париж", "134&nbsp;973", "", "", "", "")
+										+showcase-item("dbg4ho5b13", "Индия", "india", "Гоа", "73&nbsp;376", "", "", "", "")
+									.tab-pane.tab-from-msk
+										+showcase-item("490u165zs1", "Египет", "egypt", "Хургада", "34&nbsp;996", "Шарм-Эль-Шейх", "35&nbsp;772", "", "")
+										+showcase-item("2uf5xevlkd", "Таиланд", "thailand", "о.&nbsp;Самуи", "79&nbsp;900", "о.&nbsp;Пхукет", "104&nbsp;751", "", "")
+										+showcase-item("gl5q8wxwie", "Испания", "spain", "Коста Брава", "44&nbsp;520", "", "", "", "")
+										+showcase-item("v7mszxbzk2", "Израиль", "israel", "Иерусалим", "88&nbsp;076", "Мёртвое море", "80&nbsp;416", "", "")
+										+showcase-item("9cfz3q0eqq", "Вьетнам", "vietnam", "Нячанг", "92&nbsp;244", "", "", "", "")
+										+showcase-item("w3roywz0pf", "ОАЭ", "uae", "Фуджейра", "62&nbsp;101", "", "", "", "")
+										+showcase-item("4oufqfcwp5", "Китай", "china", "о.&nbsp;Хайнань", "109&nbsp;900", "Пекин", "104&nbsp;988", "", "")
+										+showcase-item("dbg4ho5b13", "Индия", "india", "Гоа", "70&nbsp;380", "Дели", "87&nbsp;982", "", "")
+										+showcase-item("7str7moo6c", "Индонезия", "indonesia", "Бали", "156&nbsp;286", "Дели", "87&nbsp;982", "", "")
+				.col-md-4.hidden-sm
+					.sidebar
+						+banner-expert(true)
+	.page
+		.container
+			.block
+				h2 Задай вопрос эксперту по туризму
+				.slider-pro.experts-slider
+					.sp-slides
+						+expert(true, "qvwj2dq3ns.jpg", "Наталия", "Turistico", "+7 (812) 313-23-99", "101")
+							p Стаж 10 лет. Вьетнам, Греция, Египет, Индия, Кипр, ОАЭ, Тайланд, Турция.
+							p Специалист по семейному отдыху и отдыху на море. Путешествовала в более чем в 20 стран. Воплощаю Ваши мечты об отдыхе!
+						+expert(true, "juy63bjbn1.jpg", "Виктория", "Shine Tour", "+7 (812) 244-54-00", "")
+							p Стаж 2 года. Болгария, Вьетнам, Египет, Кипр, Тайланд, Турция.
+							p Училась и работаю по специальности. Очень люблю путешествовать и, естественно, организовывать Ваше путешествие.
+						+expert(true, "wer86fc0ja.JPG", "Надежда", "Shine Tour", "+7 (812) 244-54-00", "")
+							p Стаж 1 год.
+							p Очень любознательна и каждую страну изучаю с разных сторон. С удовольствием расскажу и поделюсь своим опытом за чашечкой кофе.
+						+expert(false, "9blfzhd8kx.jpg", "Светлана", "OK Travel", "+7 (911) 782-16-26", "")
+							p Стаж 1 год.
+							p Очень любознательна и каждую страну изучаю с разных сторон. С удовольствием расскажу и поделюсь своим опытом за чашечкой кофе.
+						+expert(false, "zqq9l9hv11.jpg", "Евгения", "ГрандТрипс", "+7 (967) 969-75-37", "")
+							p Стаж 1 год.
+							p Очень любознательна и каждую страну изучаю с разных сторон. С удовольствием расскажу и поделюсь своим опытом за чашечкой кофе.
+						+expert(false, "itlv5qo1y3.jpg", "Евгения", "CocoLoco", "+7 (812) 921-94-94", "")
+							p Стаж 1 год.
+							p Очень любознательна и каждую страну изучаю с разных сторон. С удовольствием расскажу и поделюсь своим опытом за чашечкой кофе.
+						+expert(false, "0xxi2yk1vg.jpg", "Светлана", "Амбассадор", "+7 (968) 191-01-03", "")
+							p Стаж 1 год.
+							p Очень любознательна и каждую страну изучаю с разных сторон. С удовольствием расскажу и поделюсь своим опытом за чашечкой кофе.
+						+expert(false, "57ydtyqnj5.jpg", "Влада", "Тигра Тур", "+7 (812) 456-58-42", "")
+							p Стаж 1 год.
+							p Очень любознательна и каждую страну изучаю с разных сторон. С удовольствием расскажу и поделюсь своим опытом за чашечкой кофе.
+			.block
+				h2 Агентства Новосибирска
+				+mapflow
+				
+	.footer.footer-pre
+		.container
+			.block
+				h3 Лучшие отели мира
+				ul.footer-hotels.columns-5.list-unstyled
+					li
+						a.countryflag.countryflag-bulgaria(href="./country.html") Отели Болгарии
+					li
+						a.countryflag.countryflag-vietnam(href="./country.html") Отели Вьетнама
+					li
+						a.countryflag.countryflag-greece(href="./country.html") Отели Греции
+					li
+						a.countryflag.countryflag-dominicana(href="./country.html") Отели Доминиканы
+					li
+						a.countryflag.countryflag-egypt(href="./country.html") Отели Египта
+					li
+						a.countryflag.countryflag-israel(href="./country.html") Отели Израиля
+					li
+						a.countryflag.countryflag-india(href="./country.html") Отели Индии
+					li
+						a.countryflag.countryflag-spain(href="./country.html") Отели Испании
+					li
+						a.countryflag.countryflag-cyprus(href="./country.html") Отели Кипра
+					li
+						a.countryflag.countryflag-china(href="./country.html") Отели Китая
+					li
+						a.countryflag.countryflag-cuba(href="./country.html") Отели Кубы
+					li
+						a.countryflag.countryflag-maldives(href="./country.html") Отели Мальдив
+					li
+						a.countryflag.countryflag-marocco(href="./country.html") Отели Марокко
+					li
+						a.countryflag.countryflag-mexico(href="./country.html") Отели Мексики
+					li
+						a.countryflag.countryflag-uae(href="./country.html") Отели ОАЭ
+					li
+						a.countryflag.countryflag-syngapure(href="./country.html") Отели Сингапура
+					li
+						a.countryflag.countryflag-thailand(href="./country.html") Отели Тайланда
+					li
+						a.countryflag.countryflag-tunisia(href="./country.html") Отели Туниса
+					li
+						a.countryflag.countryflag-turkey(href="./country.html") Отели Турции
+					li
+						a.countryflag.countryflag-philippines(href="./country.html") Отели Филиппин
+					li
+						a.countryflag.countryflag-finland(href="./country.html") Отели Финляндии
+					li
+						a.countryflag.countryflag-france(href="./country.html") Отели Франции
+					li
+						a.countryflag.countryflag-horwatia(href="./country.html") Отели Хорватии
+					li
+						a.countryflag.countryflag-montenegro(href="./country.html") Отели Черногории
+					li
+						a.countryflag.countryflag-czech(href="./country.html") Отели Чехии
+					li
+						a.countryflag.countryflag-srilanka(href="./country.html") Отели Шри-Ланки
+			.block
+				.row
+					.col-md-12
+						h3 Туры по&nbsp;сезонам
+						+tours-seasons
+					.col-md-4
+						h3 Туры из&nbsp;Новосибирска
+						p.small Готовые предложения, индивидуальные путевки и&nbsp;горящие туры из&nbsp;Новосибирска. Актуальные цены турфирм Новосибирска и&nbsp;удобный поиск туров. Поможем вам выбрать оптимальный вариант путешествия!
+				p.text-light Специальные туры: 
+					a(href="./seo.html") Туры выходного дня
+					| , 
+					a(href="./seo.html") Туры на&nbsp;Новый год
+					| , 
+					a(href="./seo.html") Туры на&nbsp;майские праздники
+			.block
+				h3 Наш проект в&nbsp;других городах
+				ul.columns-5.list-unstyled.footer-cities
+					li
+						a(href="#") Абакан
+					li
+						a(href="#") Ангарск
+					li
+						a(href="#") Архангельск
+					li
+						a(href="#") Астрахань
+					li
+						a(href="#") Барнаул
+					li
+						a(href="#") Белгород
+					li
+						a(href="#") Благовещенск
+					li
+						a(href="#") Братск
+					li
+						a(href="#") Брянск
+					li
+						a(href="#") Великий Новгород
+					li
+						a(href="#") Владивосток
+					li
+						a(href="#") Владимир
+					li
+						a(href="#") Волгоград
+					li
+						a(href="#") Волжский
+					li
+						a(href="#") Вологда
+					li
+						a(href="#") Воронеж
+					li
+						a(href="#") Екатеринбург
+					li
+						a(href="#") Иваново
+					li
+						a(href="#") Ижевск
+					li
+						a(href="#") Иркутск
+					li
+						a(href="#") Йошкар-Ола
+					li
+						a(href="#") Казань
+					li
+						a(href="#") Калининград
+					li
+						a(href="#") Калуга
+					li
+						a(href="#") Кемерово
+					li
+						a(href="#") Киров
+					li
+						a(href="#") Комсомольск-на-Амуре
+					li
+						a(href="#") Кострома
+					li
+						a(href="#") Краснодар
+					li
+						a(href="#") Красноярск
+					li
+						a(href="#") Курган
+					li
+						a(href="#") Курск
+					li
+						a(href="#") Липецк
+					li
+						a(href="#") Магнитогорск
+					li
+						a(href="#") Москва
+					li
+						a(href="#") Мурманск
+					li
+						a(href="#") Набережные Челны
+					li
+						a(href="#") Нижневартовск
+					li
+						a(href="#") Нижний Новгород
+					li
+						a(href="#") Нижний Тагил
+					li
+						a(href="#") Новокузнецк
+					li
+						a(href="#") Новороссийск
+					li
+						strong Новосибирск
+					li
+						a(href="#") Омск
+					li
+						a(href="#") Орел
+					li
+						a(href="#") Оренбург
+					li
+						a(href="#") Пенза
+					li
+						a(href="#") Пермь
+					li
+						a(href="#") Петрозаводск
+					li
+						a(href="#") Псков
+					li
+						a(href="#") Ростов-на-Дону
+					li
+						a(href="#") Рязань
+					li
+						a(href="#") Самара
+					li
+						a(href="#") Санкт-Петербург
+					li
+						a(href="#") Саратов
+					li
+						a(href="#") Смоленск
+					li
+						a(href="#") Сочи
+					li
+						a(href="#") Ставрополь
+					li
+						a(href="#") Стерлитамак
+					li
+						a(href="#") Сургут
+					li
+						a(href="#") Сыктывкар
+					li
+						a(href="#") Тамбов
+					li
+						a(href="#") Тверь
+					li
+						a(href="#") Тольятти
+					li
+						a(href="#") Томск
+					li
+						a(href="#") Тула
+					li
+						a(href="#") Тюмень
+					li
+						a(href="#") Улан-Удэ
+					li
+						a(href="#") Ульяновск
+					li
+						a(href="#") Уфа
+					li
+						a(href="#") Хабаровск
+					li
+						a(href="#") Чебоксары
+					li
+						a(href="#") Челябинск
+					li
+						a(href="#") Чита
+					li
+						a(href="#") Южно-Сахалинск
+					li
+						a(href="#") Якутск
+					li
+						a(href="#") Ярославль
+				
+	+footer-base
+	include ./base/modal-city.jade
+	include ./base/scripts.jade
+	include ./base/scripts-search.jade
+	script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgiBBFKJzo-XqIIkwSHwXsoo9EeZ158JY")
+	script(src="./js/mapflow.js")
+	
+

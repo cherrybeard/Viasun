@@ -1,0 +1,24 @@
+mixin sidenav-item(active, name, link, image)
+	li(class=(active ? "active": ""))
+		a(href=link)
+			.sidenav-icon
+				img(src=image)
+			span= name
+
+mixin sidenav-country(active)
+	.sidenav
+		ul.nav.sidenav-nav
+			+sidenav-item((active=="About"), "Обзор", "./country.html", "./img/flags/flag-45.png")
+			+sidenav-item((active=="Tours"), "Туры", "./tours.html", "./img/icons/icon-plane.png")
+			+sidenav-item((active=="Resorts"), "Курорты", "./resorts.html", "./img/icons/icon-resorts.png")
+			+sidenav-item((active=="Hotels"), "Отели", "./hotels-country.html", "./img/icons/icon-hotels.png")
+			+sidenav-item((active=="Weather"), "Погода", "./weather.html", "./img/icons/icon-weather.png")
+			+sidenav-item((active=="Visa"), "Виза", "./visa.html", "./img/icons/icon-visa.png")
+			
+mixin sidenav-agency(active)
+	.sidenav
+		ul.nav.sidenav-nav
+			+sidenav-item((active=="List"), "Список анентств", "./agencies.html", "./img/icons/icon-list.png")
+			+sidenav-item((active=="Experts"), "Эксперты", "./experts.html", "./img/icons/icon-experts.png")
+			+sidenav-item((active=="Sales"), "Акции", "./advertises.html", "./img/icons/icon-sales.png")
+			+sidenav-item((active=="Visa"), "Визовые центры", "./visa-centres.html", "./img/icons/icon-visa.png")

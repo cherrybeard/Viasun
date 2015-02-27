@@ -1,0 +1,68 @@
+mixin resort(showinfo, image, name, description, price, hotels, photos, temperature, ...tags)
+	.media
+		.media-image.resort-image
+			a(href="./resort.html")
+				img(src=image)
+		.media-content
+			.resort-body
+				.resort-text
+					h3
+						a(href="./resort.html")= name
+					p.resort-description!= description
+				.resort-price
+					p Туры от
+					p.text-xlarge.strong
+						a.text-price(href="#", data-toggle="modal", data-target=".modal-search")!= price
+							| &nbsp;₽
+							//- span.helioicon.helioicon-rub
+			.resort-footer
+				ul.list-inline.resort-tags
+					for tag in tags
+						li= tag
+				if showinfo
+					ul.list-inline.resort-statistics
+						li
+							a(href="./hotels.html")!= hotels
+						li
+							a(href="./resort.html")!= photos
+						if temperature
+							li= temperature + "°C"
+					
+mixin tours-seasons
+	.row
+		.col-sm-4
+			ul.list-unstyled
+				li.text-light Лето
+				li
+					a(href="./seo.html") Туры на&nbsp;июнь
+				li
+					a(href="./seo.html") Туры на&nbsp;июль
+				li
+					a(href="./seo.html") Туры на&nbsp;август
+		.col-sm-4
+			ul.list-unstyled
+				li.text-light Осень
+				li
+					a(href="./seo.html") Туры на&nbsp;сентябрь
+				li
+					a(href="./seo.html") Туры на&nbsp;октябрь
+				li
+					a(href="./seo.html") Туры на&nbsp;ноябрь
+		.col-sm-4
+			ul.list-unstyled
+				li.text-light Зима
+				li
+					a(href="./seo.html") Туры на&nbsp;декабрь
+				li
+					a(href="./seo.html") Туры на&nbsp;январь
+				li
+					a(href="./seo.html") Туры на&nbsp;февраль
+		.col-sm-4
+			ul.list-unstyled
+				li.text-light Весна
+				li
+					a(href="./seo.html") Туры на&nbsp;март
+				li
+					a(href="./seo.html") Туры на&nbsp;апрель
+				li
+					a(href="./seo.html") Туры на&nbsp;май

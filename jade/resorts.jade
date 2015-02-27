@@ -1,0 +1,38 @@
+include ./base/sidenav.jade
+include ./base/search.jade
+include ./base/banners.jade			
+include ./base/showcases.jade			
+include ./base/footers.jade
+
+doctype html
+head
+	title Viasun2 — Курорты
+	include ./base/head.jade
+body
+	+sidenav-country("Resorts")
+	include ./base/navbar.jade
+	.header.header-image(style="background-image: url(./img/headers/austria.jpg);")
+		.container
+			ol.breadcrumb
+				li
+					a(href="./countries.html") Страны
+			h1 Курорты Австрии
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block.medialist.resorts
+							+resort(true, "//hotels.sletat.ru/i/p/16578_0_100_140_1.jpg", "Вена", "Сюда приезжают, чтобы посмотреть достопримечательности, познакомиться со&nbsp;знаменитой венской оперой и&nbsp;просто для&nbsp;неспешных прогулок", "112&nbsp;200", "307&nbsp;отелей", "4&nbsp;фото", "–2", "Культура", "Музеи", "Архитектура")
+							+resort(true, "//hotels.sletat.ru/i/p/11390_0_100_140_1.jpg", "Зальцбург", "Его живописные ландшафты, великолепные архитектурные памятники и&nbsp;богатая история делают его чрезвычайно привлекательным для&nbsp;туристов", "87&nbsp;678", "292&nbsp;отеля", "5&nbsp;фото", "0", "Семейный", "Экскурсии", "Горные лыжи", "Шоппинг")
+							+resort(true, "//hotels.sletat.ru/i/p/30398_0_100_140_1.jpg", "Инсбрук", "У Инсбрука древняя история. Сюда стремятся любители активного зимнего отдыха и ценители старинной архитектуры", "12&nbsp;180", "106&nbsp;отелей", "5&nbsp;фото", "0", "Семейный", "Архитектура", "Шоппинг")
+							+resort(true, "//hotels.sletat.ru/i/p/36738_0_100_140_1.jpg", "Каринтия", "Его живописные ландшафты, великолепные архитектурные памятники и&nbsp;богатая история делают его чрезвычайно привлекательным для&nbsp;туристов", "110&nbsp;002", "275&nbsp;отелей", "5&nbsp;фото", "", "Горные лыжи", "Музеи")
+						+search
+				.col-md-4.hidden-sm
+					.sidebar
+						+banner-expert
+	+footer-country
+	+footer-base
+	+modal-search
+	include ./base/modal-city.jade
+	include ./base/scripts.jade

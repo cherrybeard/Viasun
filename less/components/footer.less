@@ -1,0 +1,30 @@
+.footer {
+	background-color: @color-blue-background;
+	padding-bottom: 24px;
+	padding-top: 24px;
+	.list-inline>li {
+		margin-right: 12px;
+	}
+	.block {
+		border-bottom-color: @gray-lighter;
+		&:last-child {
+			border-bottom-color: transparent;
+		}
+	}
+	h3 {
+		margin-bottom: 8px;
+	}
+}
+.footer-pre {
+	background-color: @gray-light-bg;
+}
+.footer-hotels li {
+	line-height: 2;
+}
+.footer-cities a {
+	color: @text-color;
+	&:focus,
+	&:hover {
+		color: @link-hover-color;	
+	}
+}

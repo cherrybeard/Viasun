@@ -1,0 +1,24 @@
+include ./base/sidenav.jade
+include ./base/mapflow.jade
+include ./base/footers.jade
+
+doctype html
+head
+	title Viasun2 — Агентства
+	include ./base/head.jade
+body
+	+sidenav-agency("List")
+	include ./base/navbar.jade
+	.header
+		.container
+			h1 Агентства Новосибирска
+	.page
+		.container
+			.block
+				+mapflow
+	+footer-base
+	include ./base/modal-city.jade
+	include ./base/scripts.jade
+	script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgiBBFKJzo-XqIIkwSHwXsoo9EeZ158JY")
+	script(src="./js/mapflow.js")
+

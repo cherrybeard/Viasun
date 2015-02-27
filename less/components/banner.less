@@ -1,0 +1,86 @@
+.banner-sidebar {
+	display: block;
+}
+.body-bigbanner {
+	padding-bottom: 220px;
+}
+.bigbanner {
+	bottom: -10px;
+	background-color: lighten(@color-blue-lighter, 9%);
+	height: 230px;
+	padding-top: 24px;
+	position: fixed;
+	transition: opacity 0.2s;
+	width: 100%;
+	z-index: @zindex-navbar+2;
+	&>.container {
+		height: 100%;
+		position: relative;
+	}
+	.form-control {
+		width: 180px;	
+	}
+	p {
+		font-size: @font-size-large;
+		margin-bottom: 24px;
+	}
+	.close {
+		position: absolute;
+		right: 20px;
+		z-index: 2;
+	}
+}
+.bigbanner-hidden {
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	padding: 0;
+}
+.bigbanner-disabled {
+	display: none;
+}
+.bigbanner-image {
+	bottom: 0;
+	display: block;
+	position: absolute;
+	right: 0;
+}
+
+.banner-stroked {
+	border: solid 1px @gray-lighter;
+	padding: 20px;
+}
+.banner-agency {
+	border: solid 1px @gray-lighter;
+	padding: 20px;
+	position: relative;
+	text-align: center;
+	&:before {
+		background-color: white;
+		border-bottom: solid 1px @gray-lighter;
+		border-left: solid 1px @gray-lighter;
+		content: '';
+		height: 24px;
+		left: 0;
+		position: absolute;
+		top: 32px;
+		transform: rotate(45deg);
+		transform-origin: top left;
+		width: 24px;	
+	}
+	img {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 100%;
+	}
+	.btn-warning {
+		margin-top: 16px;
+	}
+	.agency-phone {
+		font-size: @font-size-large;
+		font-weight: 500;
+	}
+	.agency-address {
+		margin-top: 16px;
+	}
+}

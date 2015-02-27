@@ -1,0 +1,29 @@
+.simpleselect {
+	border: solid 1px @gray-lighter;
+	cursor: pointer;
+	font-size: @font-size-base;
+	font-weight: 500;
+	padding: 4px 6px;
+	transition: border-color 0.2s;
+	.arrow-dropdown;
+	&:hover {
+		border-color: darken(@gray-lighter, 10%);	
+	}
+}
+.simpleselect-menu {
+	//overflow: hidden;
+	max-height: 240px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding: 0;
+}
+.simpleselect-item {
+	cursor: pointer;
+	padding: 2px 8px;
+	&:hover {
+		background-color: lighten(@gray-lighter, 3%);
+	}
+	&.active {
+		background-color: @color-blue-lightest;
+	}
+}

@@ -1,0 +1,67 @@
+.datepicker {
+	table {
+		display: block;
+		font-size: @font-size-large;
+	}
+	td,
+	th {
+		display: block;	
+	}
+	tr {
+		display: flex;
+		justify-content: space-between;
+	}
+	thead {
+		display: block;
+		margin-bottom: 8px;
+	}
+	th {
+		font-size: @font-size-base;
+		font-weight: 500;
+	}
+	.dow {
+		display: none;	
+	}
+	.day:not(.disabled) {
+		&:nth-child(6),
+		&:nth-child(7) {
+			color: @brand-danger;
+		}
+	}
+	.datepicker-switch {
+		height: 28px;
+		line-height: 28px;
+		padding: 0;
+	}
+	.day {
+	}
+	.day,
+	.prev,
+	.next {
+		border-radius: @border-radius-small;
+		height: 28px;
+		line-height: 28px;
+		text-align: center;
+		padding: 0;
+		width: 32px;
+	}
+	.day:not(.disabled),
+	.prev,
+	.next {
+		cursor: pointer;
+		&:hover {
+			background-color: lighten(@gray-lighter, 3%);
+		}
+	}
+	.old,
+	.new {
+		height: 0;
+		visibility: hidden;
+	}
+	.active {
+		background-color: @color-blue-lightest;	
+	}
+	.disabled {
+		color: darken(@gray-lighter, 5%);
+	}
+}

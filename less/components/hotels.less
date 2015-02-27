@@ -1,0 +1,109 @@
+.hotels-showcase {
+	h4 {
+		margin-top: 0;	
+	}
+}
+.hotel-rating-squared {
+	background: @brand-success;
+	color: white;
+	display: block;
+	font-size: @font-size-xlarge;
+	line-height: 1;
+	padding: 4px 3px 2px;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	right: 20px;
+	&:before {
+		content: "рейтинг";
+		display: block;
+		font-size: 9px;
+	}
+}
+.hotel-description {
+	height: 128px;
+	line-height: 1.3;
+	overflow: hidden;
+}
+.hotel-image {
+	margin-bottom: 12px;
+	position: relative;
+}
+.hotel-title h3 {
+	margin-top: 0;
+}
+.hotel-stars {
+	.text-warning;
+	font-size: 80%;
+	margin-left: 8px;
+	vertical-align: -7%;
+	span {
+		margin-right: 2px;	
+	}
+}
+.hotel-details {
+	margin-bottom: 0;
+}
+.hotel-info {
+	width: 100%;
+}
+.hotel-price {
+	flex-shrink: 0;
+	padding-right: 32px;
+	text-align: right;
+}
+.hotel-price-starts a {
+	font-size: @font-size-xlarge;
+}
+.hotel-rating-good {
+	color: darken(@brand-success, 15%);
+}
+.hotels-shortlist {
+	h3 {
+		margin-bottom: 8px;
+		margin-top: 24px;
+	}
+	.media-content,
+	.media-image {
+		padding-bottom: 12px;	
+		padding-top: 12px;	
+	}
+	.media-content {
+		border-bottom: none;
+	}
+	.media-image {
+		position: relative;
+	}
+	.hotel-stars {
+		margin-left: 0;
+	}
+	.hotel-name {
+		margin-top: 4px;
+		margin-bottom: 4px;
+	}
+	.hotel-resort {
+		.text-light;
+		font-size: @font-size-small;
+	}
+	.hotel-rating {
+		font-size: @font-size-small;
+		margin-left: 8px;
+	}
+}
+.selectize-dropdown-content {
+	.hotel-stars {
+		margin-left: 0;
+	}
+	.hotel-name {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	.hotel-resort {
+		.text-light;
+		font-size: @font-size-small;
+	}
+	.hotel-rating {
+		font-size: @font-size-small;
+		margin-left: 8px;
+	}
+}

@@ -1,0 +1,281 @@
+mixin search-select-where
+	.form-group.select-where
+		label Страна
+		.input-complicated
+			select.form-control.input-country.form-control-lg(data-select="country", placeholder="Выберите страну")
+				optgroup(label="Популярные")
+					option(value="29") Вьетнам
+					option(value="40") Египет
+					option(value="51") Италия
+					option(value="59") Китай
+					option(value="72") Мальдивы
+					option(value="90") ОАЭ
+					option(value="113") Таиланд
+					option(value="119") Турция
+					option(value="128") Чехия
+				optgroup(label="Все")
+					option(value="26") Великобритания
+					option(value="35") Греция
+					option(value="39") Доминикана
+					option(value="43") Израиль
+					option(value="44") Индия
+					option(value="45") Индонезия
+					option(value="50") Испания
+					option(value="54") Камбоджа
+					option(value="57") Кения
+					option(value="68") Маврикий
+					option(value="71") Малайзия
+					option(value="150") Россия
+					option(value="105") Сейшелы
+					option(value="108") Сингапур
+					option(value="117") Тунис
+					option(value="123") Филиппины
+					option(value="125") Франция
+			select.form-control(data-select="resort", multiple="multiple")
+				option(selected, value="1") Хургада
+				option(selected, value="2") Шарм-эль-Шейх
+				option(selected, value="3") Дахаб
+				option(selected, value="4") Таба
+				option(selected, value="5") Эль Гуна
+				option(selected, value="6") Каир
+				option(selected, value="7") Макади
+				
+mixin search-select-nights
+	.form-group.select-nights(data-select="nights")
+		label Ночей
+		.input-complicated
+			.form-control-lg.dropdown-toggle(data-toggle="dropdown") 7 – 14
+			.dropdown-menu
+				.form-group.select-nights-from
+					label(for="search-nights-from") От
+					select#search-nights-from.form-control.js-search-nights-from(data-select="select")
+						- var night = 1
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night, selected)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+				.form-group.select-nights-to
+					label(for="search-nights-to") До
+					select#search-nights-to.form-control.js-search-nights-to(data-select="select")
+						- var night = 1
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night, selected)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						option(value=night)= night++
+						
+mixin search-select-date
+	.form-group.select-when(data-select="date")
+		label Вылет
+		.input-complicated
+			.form-control-lg.dropdown-toggle(data-toggle="dropdown") 26 фев
+			.dropdown-menu
+				input.js-search-date-from(type="hidden", value="26/02/2015")
+				input.js-search-date-to(type="hidden", value="01/03/2015")
+				.form-group.select-date
+					div.js-search-date
+				.form-group.select-date-range
+					label
+						input(type="checkbox", checked)
+						| ±3 дня
+						
+mixin search-select-people
+	.form-group.select-who(data-select="people")
+		label Взрослых и детей
+		.input-complicated
+			.form-control-lg.dropdown-toggle(data-toggle="dropdown") 2 взрослых
+			.dropdown-menu
+				.dropdown-line
+					.form-group.select-adults
+						label(for="search-adults") Взрослых
+						select#search-adults.form-control.js-search-adults(data-select="select")
+							option(value="1") 1
+							option(value="2", selected) 2
+							option(value="3") 3
+							option(value="4") 4
+					.form-group.select-children
+						label(for="search-children") Детей
+						select#search-children.form-control.js-search-children(data-select="select")
+							option(value="0", selected) 0
+							option(value="1") 1
+							option(value="2") 2
+							option(value="3") 3
+				.search-age.off.js-search-age
+					label Возраст детей
+					.dropdown-line
+						.form-group.off
+							label.sr-only(for="search-age-0") Возраст первого ребёнка:
+							select.form-control#search-age-0(data-select="select")
+								- var age = 1
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age, selected)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+						.form-group.off
+							label.sr-only(for="search-age-1") Возраст второго ребёнка:
+							select.form-control#search-age-1(data-select="select")
+								- var age = 1
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age, selected)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+						.form-group.off
+							label.sr-only(for="search-age-2") Возраст третьего ребёнка:
+							select.form-control#search-age-2(data-select="select")
+								- var age = 1
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age, selected)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+								option(value=age)= age++
+
+mixin search-select-stars
+	.form-group.select-class
+		label Класс отеля
+		.input-complicated(data-select="class")
+			input#search-class-2(type="checkbox")
+			label(for="search-class-2")
+				span 2
+			input#search-class-3(type="checkbox")
+			label(for="search-class-3")
+				span 3
+			input#search-class-4(type="checkbox", checked)
+			label(for="search-class-4")
+				span 4
+			input#search-class-5(type="checkbox", checked)
+			label(for="search-class-5")
+				span 5
+
+mixin search
+	.block.block-blue.search.search-short
+		form
+			h3 Поиск туров в&nbsp;Австрию 
+				a.search-city(href="#", data-toggle="modal", data-target=".modal-city") из&nbsp;Санкт-Петербурга
+			.form-line
+				+search-select-date
+				+search-select-nights
+				+search-select-people
+				+search-select-stars
+				a.btn.btn-warning.btn-xxl(href="./tours.html") Найти туры
+			
+mixin search-main
+	.block.search.search-intro
+		form
+			h2 Поиск туров 
+				a.search-city(href="#", data-toggle="modal", data-target=".modal-city") из&nbsp;Новосибирска
+			.form-line
+				+search-select-where
+				+search-select-date
+				+search-select-nights
+				+search-select-people
+				+search-select-stars
+				a.btn.btn-warning.btn-xxl(href="./tours.html") Найти туры
+	.search-intro-wrap-bg
+		.search-intro-bg
+						
+mixin modal-search
+	.modal.fade.modal-search(tabindex="-1")
+		.modal-dialog.modal-lg
+			.modal-content.modal-content-blue
+				button.close(type="button", data-dismiss="modal")
+					span.helioicon.helioicon-close
+				form.search.search-short
+					.modal-header
+						h2 Поиск туров в&nbsp;Австрию 
+							a.search-city(href="#", data-toggle="modal", data-target=".modal-city") из&nbsp;Санкт-Петербурга
+					.modal-body
+							.form-line
+								+search-select-date
+								+search-select-nights
+								+search-select-people
+								+search-select-stars
+								a.btn.btn-warning.btn-xxl(href="./tours.html") Найти туры
+
+mixin search-select-resort
+	.form-group.select-resort
+		label Курорт
+		.input-complicated
+			select.form-control.input-country.form-control-lg(data-select="resort-big", placeholder="Выберите курорт")
+				option(selected, value="0") Все курорты
+				option(value="1") Вена
+				option(value="2") Зальцбург
+				option(value="3") Инсбрук
+				option(value="4") Каринтия
+				
+mixin search-select-hotel
+	.form-group.select-hotel
+		label Отель
+		.input-complicated
+			select.form-control.input-country.form-control-lg(data-select="hotel", placeholder="Название отеля")
+
+mixin search-hotel
+	.block.block-blue.search.search-hotel
+		form
+			.form-line
+				+search-select-resort
+				+search-select-hotel
+				+search-select-stars
+				a.btn.btn-warning.btn-xxl(href="./hotels-search.html") Показать
+			

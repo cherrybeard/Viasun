@@ -1,0 +1,96 @@
+include ./base/sidenav.jade
+include ./base/banners.jade
+include ./base/showcases.jade	
+include ./base/footers.jade
+
+doctype html
+head
+	title Viasun2 — Погода
+	include ./base/head.jade
+body
+	+sidenav-country("Weather")
+	include ./base/navbar.jade
+	.header.header-image(style="background-image: url(./img/headers/austria.jpg);")
+		.container
+			ol.breadcrumb
+				li
+					a(href="./countries.html") Страны
+				li
+					a(href="./countries.html") Австрия
+			h1 Погода в Австрии
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block
+							.medialist.medialist-shortlist.weather-resorts
+								.medialist-legend
+									.weather-resort
+									.weather-day Вт, 17
+									.weather-day Ср, 18
+									.weather-day Чт, 19
+									.weather-day Пт, 20
+									.weather-day Сб, 21
+								.media
+									.weather-resort Баден
+									.weather-day.weather-cloudy +1
+									.weather-day.weather-cloudy +1
+									.weather-day.weather-cloudy +1
+									.weather-day.weather-sunny +2
+									.weather-day.weather-cloudy +1
+								.media
+									.weather-resort
+										a(href="./resort.html") Вена
+									.weather-day.weather-fair +2
+									.weather-day.weather-fair +2
+									.weather-day.weather-sunny +2
+									.weather-day.weather-sunny +3
+									.weather-day.weather-fair +4
+								.media
+									.weather-resort
+										a(href="./resort.html") Зальцбург
+									.weather-day.weather-sunny -1
+									.weather-day.weather-fair 0
+									.weather-day.weather-sunny 0
+									.weather-day.weather-sunny +0
+									.weather-day.weather-sunny +1
+								.media
+									.weather-resort
+										a(href="./resort.html") Инсбрук
+									.weather-day.weather-sunny +1
+									.weather-day.weather-sunny +1
+									.weather-day.weather-sunny 0
+									.weather-day.weather-sunny 0
+									.weather-day.weather-cloudy 0
+								.media
+									.weather-resort Линц
+									.weather-day.weather-sunny +3
+									.weather-day.weather-fair +2
+									.weather-day.weather-sunny +1
+									.weather-day.weather-sunny +2
+									.weather-day.weather-sunny +2
+						.block
+							h2 Сезонность в&nbsp;Австрии
+							p Климат Австрии - умеренный континентальный. В северо-восточной и восточной областях достаточно тепло, местные жители даже выращивают виноград. Осадки умеренные. Засухи редки. К северу погода также круглый год достаточно теплая и сухая. Благодаря расположению в разных географических высотах, Австрия делится на равнинную часть и альпийскую. Для нее характерны леса на равнинах, альпийские луга на предгорьях и вечный снег в горах.
+							p Средняя температура воздуха зимой в Австрии составляет -1-4 °C, летом +15-18 °C. Зимой Австрия является идеальным местом для горнолыжного туризма. В летнее время сюда едут те, кто любит экстремальные горные виды спорта (альпинизм) и исторический туризм.
+							h3 Похожие страны
+							p
+								a(href="./country.html") Германия
+								| , 
+								a(href="./country.html") Польша
+								| , 
+								a(href="./country.html") Франция
+								| , 
+								a(href="./country.html") Чехия
+						.block.block-stroked
+							h3 Австрия по&nbsp;сезонам
+							+tours-seasons
+				.col-md-4.hidden-sm
+					.sidebar
+						+banner-expert
+	+footer-country
+	+footer-base
+	+modal-search
+	include ./base/modal-city.jade
+	include ./base/scripts.jade

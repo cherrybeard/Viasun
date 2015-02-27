@@ -1,0 +1,317 @@
+.search {
+	form {
+		position: relative;
+	}
+	.btn-warning {
+		color: white;
+		&:hover {
+			color: white;
+		}
+	}
+	.form-line {
+		margin-top: 20px;
+	}
+	.form-group {
+		margin-bottom: 0;	
+	}
+	.dropdown-menu {
+		border: none;
+		border-top: solid 1px @gray-lighter;
+		border-radius: @border-radius-small;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		color: @gray-darker;
+		margin-top: -2px;
+		min-width: 100%;
+	}
+	.form-control-lg {
+		background-color: darken(white, 3%);
+		transition: background-color 0.2s;
+		&:hover {
+			background-color: white;
+		}
+		&:active {
+			box-shadow: 0 1px 4px fade(black, 40%) inset;
+		}
+	}
+	[data-select=class] {
+		height: 36px;
+		padding-top: 2px;
+	}
+	[data-select=country],
+	[data-select=resort] {
+		display: none;
+	}
+}
+.search-short {
+	h3 {
+		margin-bottom: 8px;	
+	}
+	.select-when { width: 18%; }
+	.select-nights { width: 18%; }
+	.select-who { width: 20%; }
+}
+.search-intro {
+	.select-where { width: 30%; }
+	.select-when { width: 10%; }
+	.select-nights { width: 10%; }
+	.select-who { width: 15%; }
+	.input-complicated,
+	.form-control-lg {
+		width: 100%;
+	}
+}
+.search-intro-bg-wrap {
+	height: 100%;
+}
+.search-intro-bg {
+	background-image: url(../img/index-intro.jpg);
+	background-position: center center;
+	background-size: cover;
+	bottom: 0;
+	filter: blur(5px);
+	left: 0;
+	opacity: 0.9;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.input-complicated {
+	position: relative;
+	label {
+		font-size: @font-size-small;
+		font-weight: normal;
+		margin-bottom: 0;
+	}
+	& > .dropdown-menu {
+		padding: 4px 8px 8px;
+		.dropdown-toggle {
+			&:after {
+				right: 6px;	
+			}
+		}
+	}
+}
+.search-city {
+	color: white;
+	border-bottom: solid 1px fade(white, 60%);
+	transition: color 0.2s, border-color 0.2s;
+	.arrow-dropdown;
+	&:after {
+		right: -14px;
+	}
+	&:focus {
+		color: white;
+	}
+	&:hover {
+		border-bottom-color:fade(@color-blue-lighter, 80%);
+		color: @color-blue-lighter;
+		transition: color 0s, border-color 0s;
+	}
+}
+.select-where {
+	.countryflag {
+		&:before {
+			vertical-align: -5%;
+		}
+	}
+	.selectize-dropdown-content {
+		.countryflag {
+			&:before {
+				vertical-align: -10%;
+			}
+		}
+	}
+	.input-resort {
+		width: 100%;
+	}
+}
+.input-resort {
+	.btn-sm {
+		font-size: @font-size-small;
+		font-weight: normal;
+		position: absolute;
+		right: 24px;
+		top: 7px;
+		z-index: 1;
+	}
+	.dropdown-menu {
+		width: 100%;
+		label {
+			font-size: @font-size-base;
+			padding: 6px 6px 6px 32px;
+		}
+		li {
+			margin-top: 0;
+			&.active {
+				a {
+					background-color: transparent;
+					color: @gray-darker;
+				}
+			}
+			a {
+				&:hover {
+					background-color: lighten(@gray-lighter, 3%);
+				}
+			}
+		}
+	}
+}
+.select-when {
+	.select-date {
+		padding-bottom: 8px;
+		padding-top: 8px;
+	}
+	.select-date-range {
+		border-top: solid 1px @gray-lighter;
+		text-align: center;
+		padding-top: 8px;
+		label {
+			cursor: pointer;
+			font-size: @font-size-large;
+			input {
+				cursor: pointer;
+				margin-right: 4px;	
+			}
+		}
+	}
+}
+.select-nights {
+	.form-group {
+		position: relative;
+		.dropdown-toggle {
+			font-size: @font-size-large;
+			padding: 4px 10px;
+		}
+	}
+	.form-group + .form-group {
+		margin-top: 2px;
+	}
+	.simpleselect-item {
+		padding-bottom: 1px;
+		padding-top: 1px;
+	}
+}
+.select-who {
+	.dropdown-menu {
+		.dropdown-menu {
+			border-top: none;
+			margin-top: 0;
+		}
+	}
+	.dropdown-line {
+		display: flex;
+		justify-content: space-between;
+		transition: opacity 0.3s, height 0.3s;
+	}
+	.select-adults,
+	.select-children {
+		width: 48%;
+		.dropdown-toggle {
+			font-size: @font-size-large;
+			padding: 4px 10px;
+		}
+	}
+	.form-group {
+		position: relative;
+		transition: opacity 0.3s, height 0.3s;
+		&.open {
+			.dropdown-toggle {
+				box-shadow: 0 2px 2px fade(black, 20%);	
+			}
+		}
+	}
+	.search-age {
+		padding-top: 8px;
+		.form-group {
+			width: 30%;
+		}
+		.simpleselect-item {
+			padding-bottom: 1px;
+			padding-top: 1px;
+		}
+	}
+	.off {
+		pointer-events: none;
+		height: 0;
+		padding: 0;
+		opacity: 0;
+	}
+}
+.select-class {
+	.input-complicated {
+		input[type="checkbox"] {
+			display: none;
+		}
+		label {
+			color: @gray-darker;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 90%;
+			font-weight: 500;
+			margin-right: -4px;
+			position: relative;
+			text-align: center;
+			width: 28px;
+			&:after {
+				color: darken(@color-blue-lightest, 5%);
+				content: "\e609";
+				font-family: @font-family-helio;
+				font-size: 28px;
+				left: 0;
+				line-height: 1;
+				margin-top: -11px;
+				position: absolute;
+				top: 50%;
+			}
+			span {
+				display: inline-block;
+				padding-top: 8px;
+				position: relative;
+				z-index: 1;
+			}
+			&:hover {
+				&:after {
+					color: lighten(@color-blue-lightest, 10%);
+				}
+			}
+			&:active {
+				//transform: scale(0.95);
+				transform-origin: bottom center;
+			}
+		}
+		input[type="checkbox"]:checked + label {
+			color: white;
+			&:after {
+				background-image: -webkit-linear-gradient(lighten(@brand-warning, 10%), spin(darken(@brand-warning, 10%), -4));
+				color: @brand-warning;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			&:hover {
+				&:after {
+					background-image: -webkit-linear-gradient(lighten(@brand-warning, 10%), darken(@brand-warning, 10%));
+				}
+			}
+		}
+	}
+}
+.modal-search {
+	.modal-header {
+		padding-bottom: 0;	
+	}
+}
+.search-hotel {
+	.form-line {
+		margin-top: 0;	
+	}
+	.btn-xxl {
+		padding-left: 48px;	
+		padding-right: 48px;	
+	}
+	.select-resort { width: 24%; }
+	.select-hotel {
+		width: 30%;
+		flex-grow: 0;
+	}
+}

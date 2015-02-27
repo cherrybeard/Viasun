@@ -1,0 +1,45 @@
+include ./base/sidenav.jade
+include ./base/footers.jade
+include ./base/experts.jade
+
+doctype html
+head
+	title Viasun2 — Эксперты
+	include ./base/head.jade
+body
+	+sidenav-agency("Experts")
+	include ./base/navbar.jade
+	.header
+		.container
+			h1.small Эксперты по&nbsp;туризму в&nbsp;Новосибирске
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block.experts-biglist.experts-recommended
+							.medialist
+								+expert-big("qvwj2dq3ns.jpg", "Наталия", "Turistico", "+7 (812) 313-23-99", "101")
+									p Стаж 10 лет. Вьетнам, Греция, Египет, Индия, Кипр, ОАЭ, Тайланд, Турция.
+									p Специалист по семейному отдыху и отдыху на море. Путешествовала в более чем в 20 стран. Воплощаю Ваши мечты об отдыхе!
+								+expert-big("juy63bjbn1.jpg", "Виктория", "Shine Tour", "+7 (812) 244-54-00", "")
+									p Стаж 2 года. Болгария, Вьетнам, Египет, Кипр, Тайланд, Турция.
+									p Училась и работаю по специальности. Очень люблю путешествовать и, естественно, организовывать Ваше путешествие.
+								+expert-big("wer86fc0ja.JPG", "Надежда", "Shine Tour", "+7 (812) 244-54-00", "")
+									p Стаж 1 год.
+									p Очень любознательна и каждую страну изучаю с разных сторон. С удовольствием расскажу и поделюсь своим опытом за чашечкой кофе.
+						.block.experts-biglist
+							.medialist.medialist-grid
+								+expert-small("9blfzhd8kx.jpg", "Светлана", "OK Travel", "+7 (911) 782-16-26", "")
+								+expert-small("zqq9l9hv11.jpg", "Евгения", "ГрандТрипс", "+7 (967) 969-75-37", "")
+								+expert-small("itlv5qo1y3.jpg", "Евгения", "CocoLoco", "+7 (812) 921-94-94", "")
+								+expert-small("0xxi2yk1vg.jpg", "Светлана", "Амбассадор", "+7 (968) 191-01-03", "")
+								+expert-small("57ydtyqnj5.jpg", "Влада", "Тигра Тур", "+7 (812) 456-58-42", "")
+
+				.col-md-4
+					.sidebar
+				
+	+footer-base
+	include ./base/modal-city.jade
+	include ./base/scripts.jade
+

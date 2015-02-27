@@ -1,0 +1,63 @@
+include ./base/sidenav.jade
+include ./base/footers.jade
+include ./base/experts.jade
+include ./base/mapflow.jade
+
+doctype html
+head
+	title Viasun2 — Агентства
+	include ./base/head.jade
+body
+	+sidenav-agency("List")
+	include ./base/navbar.jade
+	.header
+		.container
+			ol.breadcrumb
+				li
+					a(href="agencies") Агентства
+			h1 Алоха
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block.block-plaintext
+							.row
+								.col-sm-4
+									img.agency-logo(src="http://storage.viasun.ru/agency/kpy3htncmt.png")
+								.col-md-12
+									p
+										strong Количество офисов:
+										|  4
+									p
+										strong Специализация:
+										|  Туры. Авиабилеты. Ж/д билеты
+									p
+										strong Форма оплаты:
+										|  Наличный расчет. Безналичный расчет. Visa. MasterCard. Кредит. Рассрочка
+									h3 Описание
+									p Сеть турагентств пляжного отдыха «Алоха» предлагает путевки во все уголки мира по фантастически низким ценам. Цель компании № 1 — воплотить Вашу мечту об идеальном путешествии, для ее достижения «Алоха» предлагает большое количество самых интересных и выгодных предложений и помощь опытных и дружелюбных менеджеров, которые обеспечат индивидуальный подход к каждому и помогут выбрать именно то, что Вам нужно.
+									p Компания оказывает все виды туристических услуг: от подбора различных вариантов отдыха в офисах компании, до возможности самостоятельного выбора и покупки тура на сайте без комиссии агентства. А так же огромное количество других приятных сюрпризов: горящие туры, раннее бронирование, беспроцентная рассрочка, множество интересных акций, гавайский чай, приятная атмосфера и многое другое. Вы получите максимум удовольствия не только от самого отдыха, но и от подготовки к нему. «Алоха» — воплощая мечты!
+									.agency-actions
+										button.btn.btn-warning.btn-lg(type="button") Заказать подбор тура
+										button.btn.btn-primary.btn-lg(type="button") Обратный звонок
+						.block
+							h2 Эксперты агентства
+							.medialist.medialist-grid.experts-biglist
+								+expert-small("9blfzhd8kx.jpg", "Светлана", "OK Travel", "+7 (911) 782-16-26", "")
+								+expert-small("zqq9l9hv11.jpg", "Евгения", "ГрандТрипс", "+7 (967) 969-75-37", "")
+								+expert-small("itlv5qo1y3.jpg", "Евгения", "CocoLoco", "+7 (812) 921-94-94", "")
+				.col-md-4
+					.sidebar
+						.block
+	.page
+		.container
+			.block
+				h2 Офисы
+				+mapflow
+	+footer-base
+	include ./base/modal-city.jade
+	include ./base/scripts.jade
+	script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgiBBFKJzo-XqIIkwSHwXsoo9EeZ158JY")
+	script(src="./js/mapflow.js")
+

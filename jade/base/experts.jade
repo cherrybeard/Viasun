@@ -1,0 +1,37 @@
+mixin expert-big(image, name, agency, phone, phoneadd)
+	.media.expert.expert-recommended
+		.media-image
+			img.expert-photo(src="http://storage.viasun.ru/agency/"+image)
+		.media-content
+			.expert-info
+				h2.expert-name
+					a(href="./expert.html")= name
+				.expert-agency
+					a(href="./agency.html")= agency
+				.expert-phone.phone-hidden= phone
+					if phoneadd
+						|  
+						span.phone-additional= phoneadd
+					button.btn.btn-gray.btn-sm(data-toggle="phone") показать
+				button.btn.btn-primary.btn-lg(type="button") Задать вопрос
+			.expert-text
+				if block
+					block
+				p
+					a(href="./expert.html") Читать далее
+					
+mixin expert-small(image, name, agency, phone, phoneadd)
+	.media.expert
+		.media-image
+			img.expert-photo(src="http://storage.viasun.ru/agency/"+image)
+		.media-content
+			h2.expert-name
+				a(href="./expert.html")= name
+			.expert-agency
+				a(href="./agency.html")= agency
+			.expert-phone.phone-hidden= phone
+				if phoneadd
+					|  
+					span.phone-additional= phoneadd
+				button.btn.btn-gray.btn-sm(data-toggle="phone") показать
+			button.btn.btn-primary.btn-lg(type="button") Задать вопрос

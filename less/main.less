@@ -1,0 +1,610 @@
+// Removes stupid text cursor from non-editable elements
+body {
+	cursor: default;
+	transition: padding-bottom 0.4s;
+}
+h1, h2, h3, h4, h5, h6, p, span {
+	cursor: inherit;
+}
+a>span {
+	text-decoration: inherit;
+}
+
+// Imports bootstrap
+// Check variables.less there for base settings
+// Note that responsive features was disabled in variables.less file
+@import "./components/firasans.less";
+@import "./bootstrap/bootstrap.less";
+
+
+// Bootstrap overrides
+// Do not change any bootstrap less files except variables.less
+body {
+	-webkit-font-smoothing: antialiased;	
+}
+h2, h3 {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+p {
+	margin-bottom: 0;
+	& + & {
+		margin-top: 8px;	
+	}
+}
+p + h3 {
+	margin-top: 24px;
+}
+p + h2,
+ul + h2 {
+	margin-top: 24px;
+}
+p + ul {
+	margin-top: 8px;
+}
+h2 + p {
+	margin-top: 12px;
+}
+h3 + p {
+	margin-top: 12px;
+}
+h2 + h3 {
+	margin-top: 12px;
+}
+h3 + ul {
+	margin-top: 12px;
+}
+ul {
+	li + li {
+		margin-top: 8px;	
+	}
+}
+label {
+	font-weight: 500;
+}
+a:focus,
+button:focus {
+	outline: none;
+}
+a.disabled {
+	pointer-events: none;
+	color: @gray-light-text;
+}
+.container {
+	margin-left: 20px;
+	@media (min-width: @screen-lg-min) {
+		margin-left: 80px;
+	}
+}
+.lead {
+	font-size: @font-size-large;
+	line-height: 1.5;
+	margin-bottom: 32px;
+}
+.btn {
+	border-width: 0;
+	font-weight: 500;
+	transition: background 0.3s;
+	padding: 8px 24px;
+}
+.btn-default {
+	border-width: 1px;
+}
+.btn-primary {
+	&:hover,
+	&:focus {
+		background-color: lighten(@brand-primary, 15%);
+	}
+}
+.btn-warning {
+	text-shadow: 0 1px 1px darken(@brand-warning, 15%);
+	&:hover,
+	&:focus {
+		background-color: saturate(darken(@brand-warning, 10%), 15%);
+	}
+}
+.nav {
+	font-size: @font-size-h3;
+	& > li {
+		margin-top: 0;
+	}
+}
+.navbar {
+	margin-bottom: 0;
+}
+.navbar-static-top {
+	border-width: 0;
+}
+.navbar-brand {
+	font-size: @font-size-xlarge;
+}
+.navbar-inverse .navbar-brand {
+	color: white;	
+}
+.navbar .nav {
+	font-size: @font-size-large;
+}
+.breadcrumb > li + li:before {
+	content: "\e601";
+	font-family: @font-family-helio;
+}
+.list-unstyled {
+	line-height: 1.6;
+	li + li {
+		margin-top: 0;	
+	}
+}
+.modal-header,
+.modal-body {
+	padding: 20px 50px;
+}
+.modal-body {
+	padding-bottom: 40px;
+}
+.modal-content {
+	.close {
+		font-size: 36px;
+		top: 18px;
+		right: 24px;
+		position: absolute;
+	}
+}
+.modal-header {
+	border-bottom-width: 0;
+	padding-top: 40px;
+}
+.modal-content-blue {
+	background: @brand-primary;
+	color: white;
+	a {
+		color: @color-blue-lighter;
+	}
+	.close {
+		color: white;	
+	}
+}
+
+// Slider overrides
+.sp-caption-container {
+	background-color: white;
+	border-radius: @border-radius-base;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -100px;
+	padding: 24px 40px;
+	position: relative;
+	text-align: left;
+	width: 80%;
+	h3 {
+		font-size: @font-size-xlarge;	
+		margin-bottom: 16px;
+	}
+	.slide-number {
+		.pull-right;
+		.text-light;
+		position: relative;
+		top: 4px;
+	}
+}
+.sp-arrow {
+	background: fade(@brand-primary, 80%);
+	border-radius: @border-radius-base;
+	height: auto;
+	padding: 4px 16px 6px;
+	text-align: center;
+	transition: background 0.5s;
+	width: auto;
+	&:after {
+		content: none;
+	}
+	&:before {
+		background: none;
+		color: white;
+		font-family: 'Helioicons';
+		font-size: 40px;
+		height: auto;
+		position: static;
+		transform: none;
+		width: auto;
+	}
+	&.sp-previous-arrow {
+		left: -24px;
+		&:before {
+			content: '\e605';
+		}
+	}
+	&.sp-next-arrow {
+		right: -24px;
+		&:before {
+			content: '\e606';
+		}
+	}
+	&:hover,
+	&:focus {
+		background: @link-hover-color;
+	}
+	&:active {
+		margin-top: 1px;	
+	}
+}
+.arrow-dropdown {
+	position: relative;
+	&:after {
+		content: '\e603';
+		font-family: @font-family-helio;
+		font-size: 20px;
+		line-height: 1;
+		margin-top: -10px;
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		z-index: 2;
+	}
+}
+.form-control-lg {
+	border: none;
+	border-radius: @border-radius-small;
+	box-shadow: none;
+	color: black;
+	cursor: pointer;
+	font-size: @font-size-h3;
+	font-weight: 500;
+	height: 36px;
+	line-height: 36px;
+	padding: 0 12px;
+	.arrow-dropdown;
+}
+
+// New styles go here
+// For compicated and widely used UI components create new less files in ./components folder
+.text-price {
+	.text-danger;
+}
+.text-light {
+	color: @gray-light-text;
+}
+.text-xlarge {
+	font-size: @font-size-xlarge;
+}
+.btn-sm {
+	font-size: @font-size-base;
+	font-weight: normal;
+	padding: 2px 12px;
+}
+.btn-xl {
+	font-size: @font-size-h3;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+.btn-xxl {
+	font-size: @font-size-xlarge;
+}
+.btn-fullwidth {
+	width: 100%;
+}
+.btn-inline {
+	
+}
+.btn-gray {
+	background-color: darken(white, 5%);
+	&:hover {
+		background-color: darken(white, 10%);
+	}
+}
+.pagination {
+	& > li > a,
+	& > li > span {
+		background-color: transparent;
+		border: 0;
+		border-radius: @border-radius-small;
+		margin-right: 4px;
+		text-align: center;
+		padding-left: 0;
+		padding-right: 0;
+		width: 36px;
+	}
+	& > .disabled > a,
+	& > .disabled > span {
+		&,
+		&:hover,
+		&:focus {
+			background-color: transparent;
+			cursor: default;
+		}
+	}
+}
+.star-after {
+	&:after {
+		font-family: "Glyphicons Halflings";
+		content: "\e006";
+		margin-left: 8px;
+		vertical-align: -17%;
+	}
+}
+
+// Stickem
+
+.stickem-container {
+  position: relative;
+}
+
+.stickit {
+    position: fixed;
+    top: 40px;
+}
+
+.stickit-end {
+    bottom: 40px;
+    position: absolute;
+    right: 0;
+}
+
+// Custom components of UI
+@import "./components/helioicons.less";
+@import "./components/countryflags.less";
+@import "./components/datepicker.less";
+@import "./components/selectize.less";
+@import "./components/multiselect.less";
+@import "./components/simpleselect.less";
+@import "./components/content.less";
+@import "./components/columns.less";
+@import "./components/nav.less";
+@import "./components/navbar.less";
+@import "./components/sidenav.less";
+@import "./components/header.less";
+@import "./components/footer.less";
+@import "./components/block.less";
+@import "./components/medialist.less";
+@import "./components/banner.less";
+@import "./components/experts.less";
+@import "./components/select-countries.less";
+@import "./components/mapflow.less";
+@import "./components/showcases.less";
+@import "./components/graph.less";
+@import "./components/search.less";
+@import "./components/hotels.less";
+
+
+// Specific elements
+// Possibly, this should be exported to ./pages/ folder for code clarity
+// Should I add page id to isolate these elements?
+
+.tours-showcase-stars {
+	flex-shrink: 0;
+	width: 96px;
+}
+.tours-showcase {
+	.tour {
+		align-items: center;
+		display: flex;
+		.text-price {
+			font-size: @font-size-h3;
+		}
+	}
+	.media .tour {
+		font-size: @font-size-large;
+		margin-bottom: 10px;
+	}
+	.tour-image {
+		width: 10%;
+	}
+	.tour-title {
+		width: 30%;
+	}
+	.tour-starts {
+		width: 16%;
+	}
+	.tour-nights {
+		width: 16%;
+	}
+	.tour-food {
+		width: 10%;
+	}
+	.tour-price {
+		text-align: right;
+		width: 18%;
+	}
+}
+.tours-mainsearch {
+	.media-image,
+	&>.media>.media-content>.media-static {
+		height: 80px;
+	}
+}
+.tours-shortlist {
+	padding-right: 64px;
+	.tour-starts	{ width: 25%; }
+	.tour-nights	{ width: 20%; }
+	.tour-apartment	{ width: 25%; }
+	.tour-food		{ width: 10%; }
+	.tour-price		{
+		text-align: right;
+		width: 20%;
+	}
+	.media {
+		font-size: @font-size-large;
+		line-height: 20px;
+		padding: 8px;
+		p {
+			line-height: 20px;
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+		.small {
+			.text-light;
+			font-size: @font-size-small;
+			line-height: 14px;
+		}
+		.tour-price {
+			font-size: @font-size-h3;
+		}
+	}
+	.medialist-legend {
+		margin-bottom: 8px;
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+}
+.select-city {
+	.columns-block {
+		padding-bottom: 24px;
+	}
+}
+.select-city-letter {
+	float: left;
+	font-size: 200%;
+	line-height: 1;
+}
+.select-city-list a {
+	color: @text-color;
+	display: block;
+	margin-bottom: 4px;
+	margin-left: 28px;
+	&:hover,
+	&:focus {
+		color: @link-hover-color;
+	}
+}
+.phone-additional {
+	border-radius: @border-radius-base;
+	border: solid 1px;
+	font-size: 70%;
+	opacity: 0.7;
+	padding: 0 4px;
+	vertical-align: 5%;
+}
+.sale {
+	margin-top: 8px;
+	margin-bottom: 16px;
+	&>img {
+		float: left;
+		width: 80px;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+.sale-text {
+	margin-left: 96px;
+	&>h5 {
+		margin-bottom: 4px;	
+	}
+	&>p {
+		margin-bottom: 0;	
+	}
+	&>p.small {
+		margin-top: 6px;	
+	}	
+}
+.sale-large {
+	&>img {
+		width: 180px;
+	}
+	.sale-text {
+		margin-left: 200px;
+	}
+}
+.showcase-item {
+	float: left;
+	height: 230px;
+	margin-right: 5%;
+	margin-top: 20px;
+	width: 30%;
+	&:nth-child(3n) {
+		margin-right: 0;	
+	}
+}
+.showcase-image img {
+	border-radius: @border-radius-base;
+	width: 100%; 
+}
+.showcase-header h3 {
+	font-weight: 600;
+	margin-top: 16px;
+}
+.showcase-header .countryflag:before {
+	margin-right: 0;
+}
+.showcase-header,
+.showcase-resort {
+	align-items: baseline;
+	display: flex;
+	justify-content: space-between;
+}
+.showcase-resort {
+	font-size: @font-size-large;
+	margin-bottom: 4px;
+}
+.showcase-resort-name {
+	color: @text-color;
+}
+.advertise-agency {
+	font-size: @font-size-small;
+	a {
+		.text-light;	
+	}
+}
+.list-countries {
+	padding-top: 0;
+	ul {
+		line-height: 2.2;	
+	}
+	h2 {
+		margin-top: 36px;	
+	}
+}
+.tooltip-inner {
+	background-color: white;
+	border: solid 1px @gray-lighter;
+	color: @text-color;
+	font-size: @font-size-base;
+	min-width: 100px;
+	.text-price {
+		font-size: @font-size-large;
+		font-weight: 500;
+	}
+}
+.tooltip-arrow {
+	background-color: white;
+	border: none;
+	height: 10px;
+	transform: rotate(45deg);
+	width: 10px;
+}
+.tooltip.top .tooltip-arrow {
+	border-bottom: solid 1px @gray-lighter;
+	border-right: solid 1px @gray-lighter;
+}
+.phone-hidden {
+	display: inline-block;
+	position: relative;
+	.btn {
+		position: absolute;
+		right: -10px;
+		top: -2px;
+		transition: opacity 0.2s, margin-right 0.3s ease-in;
+		&:focus {
+			outline: none;	
+		}
+	}
+	.btn-hidden {
+		opacity: 0;
+		margin-right: -120px;
+		pointer-events: none;
+	}
+}
+.form-line {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+.agency-logo {
+	max-width: 100%;
+}
+.agency-actions {
+	margin-top: 24px;
+}
+.form-feedback {
+	padding-top: 24px;
+}

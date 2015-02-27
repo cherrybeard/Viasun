@@ -1,0 +1,37 @@
+@helio-font-path: "../fonts/helioicons/";
+@helio-font-name: "helioicons";
+// Import the fonts
+@font-face {
+  font-family: 'Helioicons';
+  src: url('@{helio-font-path}@{helio-font-name}.eot');
+  src: url('@{helio-font-path}@{helio-font-name}.eot?#iefix') format('embedded-opentype'),
+       url('@{helio-font-path}@{helio-font-name}.woff') format('woff'),
+       url('@{helio-font-path}@{helio-font-name}.ttf') format('truetype'),
+       url('@{helio-font-path}@{helio-font-name}.svg#helioicons') format('svg');
+}
+@font-family-helio:	"Helioicons";
+
+// Catchall baseclass
+.helioicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: @font-family-helio;
+  font-style: normal;
+  font-weight: normal;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Individual icons
+.helioicon-rub               	{ &:before { content: "\e600"; } }
+.helioicon-bullet-arrow-right	{ &:before { content: "\e601"; } }
+.helioicon-menu					{ &:before { content: "\e602"; } }
+.helioicon-bullet-arrow-down	{ &:before { content: "\e603"; } }
+.helioicon-close				{ &:before { content: "\e604"; } }
+.helioicon-left					{ &:before { content: "\e605"; } }
+.helioicon-right				{ &:before { content: "\e606"; } }
+.helioicon-up					{ &:before { content: "\e607"; } }
+.helioicon-down					{ &:before { content: "\e608"; } }
+.helioicon-star-big				{ &:before { content: "\e609"; } }

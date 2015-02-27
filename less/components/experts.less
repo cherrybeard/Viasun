@@ -1,0 +1,263 @@
+.expert-photo {
+	border-radius: 50%;
+	overflow: hidden;
+	img {
+		width: 100%;
+	}
+}
+.expert-phone {
+	font-size: @font-size-large;
+	font-weight: 500;	
+}
+.expert-agency {
+	color: @gray-dark;
+	font-size: @font-size-small;
+	a {
+		color: inherit;
+		&:hover {
+			color: @link-hover-color;
+		}
+	}
+}
+.expert-recommended {
+	.expert-name {
+		color: @color-pink;
+		a {
+			.star-after;
+			color: inherit;
+			&:hover {
+				color: saturate(lighten(@color-pink, 10%), 25%);
+			}
+			&:after {
+				font-size: 60%;
+				vertical-align: -5%;
+			}
+		}
+	}
+	.btn-gray {
+		background-color: @color-blue-lightest-border;
+		&:hover {
+			background-color: darken(@color-blue-lightest-border, 3%);
+		}
+	}
+}
+.experts-slider {
+	.sp-slides-container {
+		border: solid 1px @gray-lighter;
+	}
+	.expert {
+		align-content: flex-start;
+		display: flex;
+		justify-content: center;
+		padding: 64px 120px 0;
+		.expert-photo {
+			flex-shrink: 0;
+			height: 150px;
+			width: 150px;
+		}
+		.expert-text {
+			height: 320px;
+			padding-left: 32px;
+			p {
+				font-size: @font-size-large;	
+			}
+		}
+		.expert-info {
+			margin-bottom: 16px;
+			margin-top: 16px;
+		}
+		.expert-header,
+		.expert-actions {
+			align-items: baseline;
+			display: flex;
+			justify-content: space-between;
+		}
+		.expert-actions {
+			padding-top: 16px;
+		}
+	}
+	.sp-thumbnails-container {
+		margin-top: -1px;
+	}
+	.sp-selected-thumbnail {
+		.expert-thumb {
+			border: solid 1px @gray-lighter;
+			border-top-color:  white;
+			border-bottom-color: @brand-primary;
+		}
+	}
+	.expert-thumb {
+		align-content: flex-start;
+		display: flex;
+		padding: 14px 16px;
+		.expert-photo {
+			height: 40px;
+			width: 40px;
+		}
+		.expert-text {
+			padding-left: 16px;
+			p {
+				margin-bottom: 0;	
+			}
+		}
+		&.expert-recommended {
+			border-bottom-color: @color-pink;
+			.expert-name {
+				.star-after;
+				&:after {
+					font-size: 70%;
+					margin-left: 6px;
+					vertical-align: 0%;
+				}
+			}
+		}
+	}
+}
+.expert-banner {
+	align-items: center;
+	border: solid 1px @gray-lighter;
+	border-radius: @border-radius-large;
+	display: flex;
+	flex-direction: column;
+	padding: 28px 16px;
+	text-align: center;
+	a {
+		display: block;
+	}
+	h3 {
+		line-height: 1.4;
+		max-width: 80%;
+		margin-bottom: 24px;
+	}
+	.expert-name {
+		font-size: floor(@font-size-h3*1.2);
+		margin-top: 12px;
+		a {
+			&:after {
+				margin-left: 4px;
+				vertical-align: -3%;
+			}
+		}
+	}
+	.expert-agency {
+		margin-bottom: 16px;
+	}
+	.btn-lg {
+		width: 180px;	
+	}
+	.expert-photo {
+		height: 90px;
+		width: 90px;
+	}
+	.expert-phone {
+		color: @gray-darker;
+		margin-bottom: 16px;
+	}
+	&.expert-recommended {
+		border-color: transparent;
+		background-color: @color-blue-lightest;
+	}
+}
+.experts-biglist {
+	&.experts-recommended {
+		background-color: @color-blue-lightest;
+		border-radius: @border-radius-large;
+		.media-content {
+			border-bottom-color: @color-blue-lightest-border;
+			display: flex;
+		}
+		.media:last-child .media-content {
+			border-bottom: none;
+		}
+	}
+	.media-content {
+		padding-bottom: 32px;
+		padding-top: 32px;
+	}
+	.expert-photo {
+		height: 150px;
+		width: 150px;
+	}
+	.expert-info {
+		flex-shrink: 0;
+		width: 260px;
+	}
+	.expert-agency {
+		display: block;
+		margin-bottom: 12px;
+		margin-top: 2px;
+		width: auto;
+	}
+	.expert-phone {
+		margin-bottom: 12px;
+	}
+	.btn-lg {
+		display: block;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+.expert-full {
+	.expert-about {
+		margin-top: 24px;	
+	}
+	.expert-contacts {
+		font-size: @font-size-h3;
+		margin-top: 16px;	
+	}
+	.expert-name {
+		.star-after;
+		&:after {
+			font-size: 65%;
+			vertical-align: -5%;
+		}
+	}
+	.expert-phone {
+		font-size: inherit;
+		font-weight: 400;
+		margin-bottom: 0;		
+	}
+	.expert-agency {
+		font-size: @font-size-base;	
+	}
+	.preicon {
+		&:before {
+			font-family: @font-family-helio;
+			display: inline-block;
+			line-height: 1;
+			margin-right: 8px;
+		}
+	}
+	.preicon-phone {
+		&:before {
+			font-size: 120%;
+			content: '\e60b';
+			padding-left: 3px;
+			vertical-align: -15%;
+		}
+	}
+	.preicon-icq {
+		&:before {
+			font-size: 200%;
+			content: '\e60a';
+			vertical-align: -24%;
+		}
+	}
+}
+.banner-askexpert {
+	border-radius: @border-radius-base;
+	margin-left: -12px;
+	margin-right: -12px;
+	h3 {
+		margin-bottom: 12px;
+	}
+	label {
+		font-size: @font-size-small;	
+	}
+	.form-group {
+		margin-bottom: 10px;	
+	}
+	.btn {
+		margin-top: 8px;	
+	}
+}

@@ -1,0 +1,144 @@
+include ./base/sidenav.jade
+include ./base/banners.jade
+include ./base/showcases.jade
+include ./base/search.jade
+include ./base/footers.jade
+
+mixin hotel(number, name, stars, resort, reviews, rating)
+	.media
+		.hotel-number= number
+		.hotel-name
+			a(href="./hotel.html")= name
+			span.hotel-stars
+				span.glyphicon.glyphicon-star
+				if stars>1
+					span.glyphicon.glyphicon-star
+				if stars>2
+					span.glyphicon.glyphicon-star
+				if stars>3
+					span.glyphicon.glyphicon-star
+				if stars>4
+					span.glyphicon.glyphicon-star
+		.hotel-resort= resort
+		.hotel-reviews= reviews
+		.hotel-rating= rating
+
+doctype html
+head
+	title Viasun2 — Рейтинг отелей
+	include ./base/head.jade
+body
+	+sidenav-country("Hotels")
+	include ./base/navbar.jade
+	.header.header-image(style="background-image: url(./img/headers/austria.jpg);")
+		.container
+			ol.breadcrumb
+				li
+					a(href="./countries.html") Страны
+				li
+					a(href="./country.html") Австрия
+				li
+					a(href="./country.html") Отели
+			h1 Рейтинг отелей Австрии
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block
+							h2 Лучшие отели Австрии
+							.medialist.medialist-striped.medialist-shortlist.hotels-rating
+								.medialist-legend
+									.hotel-number
+									.hotel-name Название отеля
+									.hotel-resort Курорт
+									.hotel-reviews Отзывов
+									.hotel-rating Рейтинг
+								- var i=1
+								+hotel(i++, 'Loipersdorf Spa & Conference Hotel', 5, 'Штирия', 23, '10.0')
+								+hotel(i++, 'ibis Wien Mariahilfl', 3, 'Вена', 48, '9.2')
+								+hotel(i++, 'Hilton Vienna', 5, 'Вена', 9, '9.8')
+								+hotel(i++, 'Beim Theresianum', 3, 'Вена', 12, '9.6')
+								+hotel(i++, 'Falkensteiner Hotel Am Schottenfeld Vienna', 4, 'Вена', 9, '9.5')
+								+hotel(i++, 'Zipser', 4, 'Вена', 9, '9.4')
+								+hotel(i++, 'Austria Trend Hotel Europa Wien', 4, 'Вена', 9, '9.4')
+								+hotel(i++, 'Best Western Hotel Das Tigra', 4, 'Вена', 9, '8.8')
+								+hotel(i++, 'Delta Hotel Vienna', 4, 'Вена', 25, '9.2')
+								+hotel(i++, 'Loipersdorf Spa & Conference Hotel', 5, 'Штирия', 23, '10.0')
+								+hotel(i++, 'ibis Wien Mariahilfl', 3, 'Вена', 48, '9.2')
+								+hotel(i++, 'Hilton Vienna', 5, 'Вена', 9, '9.8')
+								+hotel(i++, 'Beim Theresianum', 3, 'Вена', 12, '9.6')
+								+hotel(i++, 'Falkensteiner Hotel Am Schottenfeld Vienna', 4, 'Вена', 9, '9.5')
+								+hotel(i++, 'Zipser', 4, 'Вена', 9, '9.4')
+								+hotel(i++, 'Austria Trend Hotel Europa Wien', 4, 'Вена', 9, '9.4')
+								+hotel(i++, 'Best Western Hotel Das Tigra', 4, 'Вена', 9, '8.8')
+								+hotel(i++, 'Delta Hotel Vienna', 4, 'Вена', 25, '9.2')
+								+hotel(i++, 'Loipersdorf Spa & Conference Hotel', 5, 'Штирия', 23, '10.0')
+								+hotel(i++, 'ibis Wien Mariahilfl', 3, 'Вена', 48, '9.2')
+								+hotel(i++, 'Hilton Vienna', 5, 'Вена', 9, '9.8')
+								+hotel(i++, 'Beim Theresianum', 3, 'Вена', 12, '9.6')
+								+hotel(i++, 'Falkensteiner Hotel Am Schottenfeld Vienna', 4, 'Вена', 9, '9.5')
+								+hotel(i++, 'Zipser', 4, 'Вена', 9, '9.4')
+								+hotel(i++, 'Austria Trend Hotel Europa Wien', 4, 'Вена', 9, '9.4')
+								+hotel(i++, 'Best Western Hotel Das Tigra', 4, 'Вена', 9, '8.8')
+								+hotel(i++, 'Delta Hotel Vienna', 4, 'Вена', 25, '9.2')
+								+hotel(i++, 'Loipersdorf Spa & Conference Hotel', 5, 'Штирия', 23, '10.0')
+								+hotel(i++, 'ibis Wien Mariahilfl', 3, 'Вена', 48, '9.2')
+								+hotel(i++, 'Hilton Vienna', 5, 'Вена', 9, '9.8')
+								+hotel(i++, 'Beim Theresianum', 3, 'Вена', 12, '9.6')
+								+hotel(i++, 'Falkensteiner Hotel Am Schottenfeld Vienna', 4, 'Вена', 9, '9.5')
+								+hotel(i++, 'Zipser', 4, 'Вена', 9, '9.4')
+								+hotel(i++, 'Austria Trend Hotel Europa Wien', 4, 'Вена', 9, '9.4')
+								+hotel(i++, 'Best Western Hotel Das Tigra', 4, 'Вена', 9, '8.8')
+								+hotel(i++, 'Delta Hotel Vienna', 4, 'Вена', 25, '9.2')
+								+hotel(i++, 'Loipersdorf Spa & Conference Hotel', 5, 'Штирия', 23, '10.0')
+								+hotel(i++, 'ibis Wien Mariahilfl', 3, 'Вена', 48, '9.2')
+								+hotel(i++, 'Hilton Vienna', 5, 'Вена', 9, '9.8')
+								+hotel(i++, 'Beim Theresianum', 3, 'Вена', 12, '9.6')
+								+hotel(i++, 'Falkensteiner Hotel Am Schottenfeld Vienna', 4, 'Вена', 9, '9.5')
+								+hotel(i++, 'Zipser', 4, 'Вена', 9, '9.4')
+								+hotel(i++, 'Austria Trend Hotel Europa Wien', 4, 'Вена', 9, '9.4')
+								+hotel(i++, 'Best Western Hotel Das Tigra', 4, 'Вена', 9, '8.8')
+								+hotel(i++, 'Delta Hotel Vienna', 4, 'Вена', 25, '9.2')
+								+hotel(i++, 'Falkensteiner Hotel Am Schottenfeld Vienna', 4, 'Вена', 9, '9.5')
+								+hotel(i++, 'Zipser', 4, 'Вена', 9, '9.4')
+								+hotel(i++, 'Austria Trend Hotel Europa Wien', 4, 'Вена', 9, '9.4')
+								+hotel(i++, 'Best Western Hotel Das Tigra', 4, 'Вена', 9, '8.8')
+								+hotel(i++, 'Delta Hotel Vienna', 4, 'Вена', 25, '9.2')
+								.medialist-footer Рейтинг отелей основан на&nbsp;оценках туристов
+						.block
+							.row
+								.col-sm-8
+									h3 Рейтинг отелей мира
+									ul.list-unstyled.columns-2
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Австрии
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Германии
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Польши
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Франции
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Чехии
+								.col-sm-8
+									h3 Отели похожих стран
+									ul.list-unstyled.columns-2
+										li
+											a.countryflag.countryflag-germany(href="./hotels.html") Отели Германии
+										li
+											a.countryflag.countryflag-poland(href="./hotels.html") Отели Польши
+										li
+											a.countryflag.countryflag-france(href="./hotels.html") Отели Фрации
+										li
+											a.countryflag.countryflag-czech(href="./hotels.html") Отели Чехии
+						.block.block-stroked
+							h3 Австрия по&nbsp;сезонам
+							+tours-seasons
+				.col-md-4.hidden-sm
+					.sidebar
+						+banner-expert
+	+footer-country
+	+footer-base
+	include ./base/modal-city.jade
+	include ./base/scripts.jade

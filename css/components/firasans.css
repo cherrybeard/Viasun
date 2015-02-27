@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'Helioicons';
+  src: url('../fonts/firasans/firasans.eot');
+  src: url('../fonts/firasans/firasans.eot?#iefix') format('embedded-opentype'), url('../fonts/firasans/firasans.woff') format('woff'), url('../fonts/firasans/firasans.woff2') format('woff2'), url('../fonts/firasans/firasans.ttf') format('truetype');
+}

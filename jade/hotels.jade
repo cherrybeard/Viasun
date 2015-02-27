@@ -1,0 +1,66 @@
+include ./base/sidenav.jade
+include ./base/hotels.jade
+include ./base/banners.jade
+include ./base/showcases.jade
+include ./base/search.jade
+include ./base/footers.jade
+
+doctype html
+head
+	title Viasun2 — Курорт
+	include ./base/head.jade
+body
+	+sidenav-country("Hotels")
+	include ./base/navbar.jade
+	.header.header-image(style="background-image: url(./img/headers/austria.jpg);")
+		.container
+			ol.breadcrumb
+				li
+					a(href="./countries.html") Страны
+				li
+					a(href="./country.html") Австрия
+			h1 Отели Австрии
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block
+							+hotels-tabs
+						.block
+							.row
+								.col-sm-8
+									h3 Рейтинг отелей мира
+									ul.list-unstyled.columns-2
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Австрии
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Германии
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Польши
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Франции
+										li
+											a(href="./hotels-rating.html") Рейтинг отелей Чехии
+								.col-sm-8
+									h3 Отели похожих стран
+									ul.list-unstyled.columns-2
+										li
+											a.countryflag.countryflag-germany(href="./hotels.html") Отели Германии
+										li
+											a.countryflag.countryflag-poland(href="./hotels.html") Отели Польши
+										li
+											a.countryflag.countryflag-france(href="./hotels.html") Отели Фрации
+										li
+											a.countryflag.countryflag-czech(href="./hotels.html") Отели Чехии
+						.block.block-stroked
+							h3 Австрия по&nbsp;сезонам
+							+tours-seasons
+						+search
+				.col-md-4.hidden-sm
+					.sidebar
+						+banner-expert
+	+footer-country
+	+footer-base
+	include ./base/modal-city.jade
+	include ./base/scripts.jade

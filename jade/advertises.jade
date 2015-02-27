@@ -1,0 +1,51 @@
+include ./base/sidenav.jade
+include ./base/banners.jade
+include ./base/footers.jade
+
+mixin advert(image, title, text, agency)
+	.media
+		.media-image
+			a(href="./advertise.html")
+				img(src=image)
+		.media-content
+			h3 
+				a(href="./advertise.html")= title
+			p= text
+			p.advertise-agency
+				a(href="./agency.html")= agency
+
+doctype html
+head
+	title Viasun2 — Объявления агентств
+	include ./base/head.jade
+body
+	+sidenav-agency("Sales")
+	include ./base/navbar.jade
+	.header
+		.container
+			h1 Объявления агентств
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block
+							.medialist.advertises
+								+advert("http://storage.viasun.ru/motion/pd73ydxxma.jpg", "Раннее бронирование от Coral", "Неповторимая атмосфера, лучшие цены для идеального отдыха! Бронируйте туры заранее и платите меньше!", "Coral Travel")
+								+advert("http://storage.viasun.ru/motion/oq49n9yjj7.jpg", "Хитовые туры в Египет!", "Туры в Египет по хитовым ценам!", "Sunrise tur")
+								+advert("http://storage.viasun.ru/motion/w8xny0ddaa.jpg", "Поиск туров от Coral Travel", "Организация отдыха в Турцию, Испанию, Египет, Китай, Тайланд, Италию, Доминикану, Тунис, Вьетнам и в др. страны. Продажа горящих путевок. Ежедневные вылеты. Отдых на популярных курортах. Подбор туров от Coral Travel - мгновенное подтверждение! Online - оплата туров в 2 клика! Оплата картами Viza и Master Card.", "Coral Travel")
+								+advert("http://storage.viasun.ru/motion/udlm0zr292.jpg", "Хорошие цены на отдых от Тез Тур", "Компания Тез Тур поможет вам найти самые привлекательные предложения по всем направлениям", "Tez Tour")
+								+advert("http://storage.viasun.ru/motion/suwie0bm1c.jpg", "Раннее бронирование от Tez Tour", "Компания Тез Тур поможет вам найти самые привлекательные предложения для летнего отдыха по всем направлениям", "Tez Tour")
+								+advert("http://storage.viasun.ru/motion/xqza970haa.jpg", "Раннее бронирование Grecotel", "Не пропустите акцию от сети отелей Grecotel по раннему бронированию до 31 марта: Виза в подарок!", "Sunrise tur")
+								+advert("http://storage.viasun.ru/motion/or1o8auwnw.jpg", "Online бронирование от Pegas", "Мы предоставляем услуги по продаже экскурсионных туров в Египет, Тайланд, ОАЭ, Испанию, Италию, Грецию, Тунис и др. стран. У Вас есть возможность побывать в горячей Испании, пляжной Италии, монументальной Греции или близкой по духу Болгарии, искупаться на красивых пляжах Туниса и не только.", "Pegas Touristik")
+								+advert("http://storage.viasun.ru/motion/gohpgl1eal.jpg", "Поиск туров от Pegas Touristik", "Турагентство ООО «ЦМТ» является турагентством розничной сети туроператора Pegas Touristik, являющегося крупнейшим туристическим оператором, охватывающим все популярные туристические направления, независимо от их места на мировой карте. На сегодняшний день мы охватываем большую часть туристического рынка, ежегодно расширяя свой штат и перечень предлагаемых услуг, не забывая об их качестве.", "Pegas Touristik")
+								+advert("http://storage.viasun.ru/motion/3tnrfxphr1.jpg", "Раннее бронирование лето 2015", "Туры в Турцию с 15.05.2015 от 21 500 (на человека).", "Sunrise tur")
+								+advert("http://storage.viasun.ru/motion/qhokf9ekv5.jpg", "Туры от Pegas Touristik!", "Экскурсионные туры и отдых на популярных курортах - отличные цены!", "Pegas Touristik")
+								+advert("http://storage.viasun.ru/motion/3bhpe08kwx.jpg", "Горящие туры от Coral Travel", "Самые привлекательные горящие туры, горячие спецпредложения и путевки на сайте турагентства Coral Travel", "Coral Travel")
+											
+				.col-md-4.hidden-sm
+					.sidebar
+						+banner-expert
+	+footer-base
+	include ./base/modal-city.jade
+	include ./base/scripts.jade

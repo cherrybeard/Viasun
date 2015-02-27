@@ -1,0 +1,49 @@
+mixin mapflow-agency(recommended, active, name, address, phone)
+	.mapflow-agency(class=(recommended ? "mapflow-agency-recommended " : "") + (active ? "active" : ""))
+		h3= name
+		p= address
+		p.mapflow-agency-phone= phone
+
+mixin mapflow-agency-info(recommended, active, name, logo, description, address, phone1, phone2, offices)
+	.mapflow-agency(class=(recommended ? "mapflow-agency-recommended " : "") + (active ? "active" : ""))
+		h3
+			a(href="./agency.html")= name
+		.mapflow-info-description
+			p= description
+			.mapflow-info-logo
+				img(src=logo)
+		.mapflow-info-footer
+			button.btn.btn-primary Обратный звонок
+			.mapflow-info-contacts
+				p= address
+				p.mapflow-agency-phone= phone1
+				if phone2
+					p.mapflow-agency-phone= phone2
+				if offices
+					if offices==1
+						a(href="./agency.html")!= "Ещё "+offices+"&nbsp;офис"
+					else if offices<5
+						a(href="./agency.html")!= "Ещё "+offices+"&nbsp;офиса"
+					else
+						a(href="./agency.html")!= "Ещё "+offices+"&nbsp;офиса"
+
+mixin mapflow
+	.mapflow
+		.mapflow-map(data-lat="55.0282513", data-lng="82.9183072", data-zoom="13")
+		.mapflow-info
+			+mapflow-agency-info(true, true, "Гарант-Тур", "http://storage.viasun.ru/agency/kt6lxzj22d.png", "Туристическое агентство «Гарант-Тур» — это коллектив опытных и внимательных менеджеров, готовых ответить на все интересующие вас вопросы и предложить только лучшие варианты отдыха, индивидуальные туры. На туристическом рынке более 6 лет.", "Красный проспект, 184", "(383) 292-94-99", "(383) 287-01-28", 2)
+			+mapflow-agency-info(true, false, "Waytogo Travel", "http://storage.viasun.ru/agency/792oww6t40.png", "Образовательные туры в Англию, Францию, Германию и, конечно, отдых по всему миру. Надежные туроператоры, хорошие отели и бонусы.", "Пермитина, 24", "(383) 239-30-96", "", 1)
+			+mapflow-agency-info(false, false, "Эль-Тур", "http://storage.viasun.ru/agency/yw11yrso12.jpg", "Туристическая компания «Эль-Тур», является одним из самых динамично развивающихся туристических агентств Сибири. Мы предлагаем полный спектр услуг в туризме: от групповых туров, оформления виз, услуг авиакассы до формирования индивидуальных туров на автомобиле с ночевкой в средневековых замках.", "Вокзальная магистраль, 10", "(383) 207-57-01", "", 3)
+			+mapflow-agency-info(false, false, "Энигма", "http://storage.viasun.ru/agency/793y8bx4k4.png", "Агентство отдыха и путешествий «Энигма» предлагает широкий спектр туристических услуг: организация свадьбы и медового месяца, событийные туры по всему миру, подбор индивидуального тура, прокат автомобиля за границей, комфортный отдых с детьми, лучшие пляжи планеты, лечение за границей, экскурсионные туры, оформление визы, паломничество, экотуризм, шоп-туры", "Ядринцевская, 53/1", "(383) 310-50-36", "(383) 310-50-37", 0)
+			+mapflow-agency-info(false, false, "1001 Тур", "http://storage.viasun.ru/agency/5lz3sprjlu.png", "«1001 Тур» – федеральная сеть туристических агентств, работающая с 2002 года и имеющая в настоящее время более 170 офисов по всей России. «1001 Тур Новосибирск» – надежная, проверенная временем и тысячами туристов компания. В двух офисах, расположенных в центре Правого и Левого берегов, для Вас работают 19 опытных турменеджеров. Доверьте свой отдых профессионалам!", "Романова, 39", "(383) 209-07-77", "", 1)
+			+mapflow-agency-info(false, false, "Coral Travel", "http://storage.viasun.ru/agency/enkjka6eio.jpg", "Туристическое агентство, уполномоченное Coral Travel, специализирующиеся на организации следующих видов отдыха: пляжном, экскурсионном, горнолыжном, автобусные и железнодорожные туры, морские круизы, свадебные, шоп, детские и молодежные туры, Корпоративное обслуживание компаний.", "Фрунзе, 5", "(383) 221-02-07", "(383) 375-00-18", 2)
+			+mapflow-agency-info(false, false, "Акватория Трэвел", "http://storage.viasun.ru/agency/ji0ml3cj0m.png", "Компания «Акватория Трэвел» - это динамично развивающееся звено в длинной цепочке туриндустрии. Цель нашей компании – обеспечить качественный, безопасный, запоминающийся и доступный отдых. Мы заинтересованы в том, чтобы Вы стали нашими постоянными клиентами и друзьями, поэтому гарантируем индивидуальный подход к каждому из Вас и высокий уровень обслуживания.", "р.п. Краснообск (ВАСХНИЛ), Центральная, 3а", "(383) 238-38-66", "", 0)
+		.mapflow-list
+			.mapflow-agencies
+				+mapflow-agency(true, true, "Гарант-Тур", "Красный проспект, 184", "(383) 292-94-99")
+				+mapflow-agency(true, false, "Waytogo Travel", "Пермитина, 24", "(383) 239-30-96")
+				+mapflow-agency(false, false, "Эль-Тур", "Вокзальная магистраль, 10", "(383) 207-57-01")
+				+mapflow-agency(false, false, "Энигма", "Ядринцевская, 53/1", "(383) 310-50-36")
+				+mapflow-agency(false, false, "1001 Тур", "Романова, 39", "(383) 209-07-77")
+				+mapflow-agency(false, false, "Coral Travel", "Фрунзе, 5", "(383) 221-02-07")
+				+mapflow-agency(false, false, "Акватория Трэвел", "р.п. Краснообск (ВАСХНИЛ), Центральная, 3а", "(383) 238-38-66")

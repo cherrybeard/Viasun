@@ -1,0 +1,33 @@
+.navbar-brand-logo {
+	padding: 12px;
+}
+.navbar-city {
+	&:before {
+		content: "\e062";
+		font-family: "Glyphicons Halflings";
+		margin-right: 8px;
+		vertical-align: -10%;
+	}
+}
+.navbar .navbar-nav>li>a.text-light {
+	color: @color-blue-lighter;
+	&:hover {
+		color: lighten(@color-blue-lighter, 5%);
+	}
+}
+.navbar-main {
+	font-weight: 400;
+	margin-left: 60px;
+	&>li>a {
+		padding-left: 20px;	
+		padding-right: 20px;	
+	}
+}
+.navbar .dropdown-toggle {
+	&:after {
+		content: "\e603";
+		font-family: "Helioicons";
+		line-height: 1;
+		margin-left: 7px;
+	}
+}

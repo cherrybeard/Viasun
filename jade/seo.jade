@@ -1,0 +1,108 @@
+include ./base/sidenav.jade
+include ./base/banners.jade
+include ./base/showcases.jade
+include ./base/search.jade
+include ./base/graph.jade
+include ./base/footers.jade
+
+mixin tour(starts, resort, nightsfrom, nightsto, price)
+	.media
+		.tour-starts!= starts
+		.tour-resort!= resort
+		if nightsfrom != nightsto
+			.tour-nights!= "от " + nightsfrom + " до " + nightsto
+		else
+			.tour-nights!= "только " + nightsfrom
+		.tour-price
+			| от 
+			a.text-price(href="./tour.html")!= price+'&nbsp;₽'
+
+doctype html
+head
+	title Viasun2 — Курорт
+	include ./base/head.jade
+body
+	+sidenav-country("Tours")
+	include ./base/navbar.jade
+	.header.header-image(style="background-image: url(./img/headers/austria.jpg);")
+		.container
+			ol.breadcrumb
+				li
+					a(href="./countries.html") Страны
+				li
+					a(href="./country.html") Австрия
+			h1.small Туры в&nbsp;Австрию в&nbsp;сентябре 2015
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block
+							h2 График минимальных цен
+							+graph
+						.block
+							h2 График минимальных цен
+							+graph-copy
+						.block
+							h2 График минимальных цен
+							+graph-copy2
+						.block
+							h2 Ближайшие вылеты
+							.tabpanel
+								ul.nav.nav-lines
+									li.active
+										a(href="#", data-toggle="tab", data-target=".tab-from-nsk") Вылет из&nbsp;Новосибирска
+									li
+										a(href="#", data-toggle="tab", data-target=".tab-from-msk") из&nbsp;Москвы
+								.tab-content
+									.tab-pane.tab-from-nsk.active
+										.medialist.medialist-striped.medialist-shortlist.tours-seo
+											.medialist-legend
+												.tour-starts Вылет
+												.tour-resort Курорт
+												.tour-nights Ночей
+												.tour-price Стоимость
+											+tour('14&nbsp;февраля', 'Кирцюбель', 7, 12, '68&nbsp;259')
+											+tour('15&nbsp;февраля', 'Вена', 7, 8, '76&nbsp;827')
+											+tour('15&nbsp;февраля', 'Целль-ам-Зе', 6, 8, '71&nbsp;312')
+											+tour('16&nbsp;февраля', 'Зель', 6, 12, '71&nbsp;437')
+											+tour('16&nbsp;февраля', 'Зель', 9, 14, '69&nbsp;733')
+											+tour('16&nbsp;февраля', 'Вена', 12, 14, '80&nbsp;259')
+											+tour('17&nbsp;февраля', 'Целль-ам-Зе', 9, 10, '52&nbsp;356')
+											+tour('18&nbsp;февраля', 'Целль-ам-Зе', 7, 14, '74&nbsp;181')
+											+tour('18&nbsp;февраля', 'Зель', 9, 12, '81&nbsp;289')
+											+tour('18&nbsp;февраля', 'Вена', 6, 8, '60&nbsp;862')
+											+tour('20&nbsp;февраля', 'Кирцюбель', 9, 12, '62&nbsp;266')
+											.medialist-footer Цены на&nbsp;путевки в&nbsp;Австрию на&nbsp;сентябрь сформированы на&nbsp;основе поисковых запросов пользователей портала
+									.tab-pane.tab-from-msk
+										.medialist.medialist-shortlist.medialist-striped.tours-seo
+											.medialist-legend
+												.tour-starts Вылет
+												.tour-resort Курорт
+												.tour-nights Ночей
+												.tour-price Стоимость
+											+tour('14&nbsp;февраля', 'Вена', 6, 9, '46&nbsp;953')
+											+tour('15&nbsp;февраля', 'Вена', 7, 14, '66&nbsp;842')
+											+tour('15&nbsp;февраля', 'Целль-ам-Зе', 9, 12, '51&nbsp;216')
+											+tour('16&nbsp;февраля', 'Кирцюбель', 7, 14, '51&nbsp;598')
+											+tour('16&nbsp;февраля', 'Зель', 7, 7, '53&nbsp;200')
+											+tour('16&nbsp;февраля', 'Вена', 6, 9, '54&nbsp;269')
+											+tour('17&nbsp;февраля', 'Вена', 6, 9, '48&nbsp;953')
+											+tour('18&nbsp;февраля', 'Вена', 7, 14, '50&nbsp;842')
+											+tour('18&nbsp;февраля', 'Целль-ам-Зе', 9, 12, '51&nbsp;216')
+											+tour('18&nbsp;февраля', 'Кирцюбель', 7, 14, '56&nbsp;598')
+											+tour('20&nbsp;февраля', 'Зель', 7, 7, '47&nbsp;200')
+											.medialist-footer Цены на&nbsp;путевки в&nbsp;Австрию на&nbsp;сентябрь сформированы на&nbsp;основе поисковых запросов пользователей портала
+						+search
+						.block.block-stroked
+							h3 Австрия по&nbsp;сезонам
+							+tours-seasons
+				.col-md-4.hidden-sm
+					.sidebar
+						+banner-expert
+	+footer-country
+	+footer-base
+	include ./base/modal-city.jade
+	include ./base/scripts.jade
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js")
+	script(src="./js/graph.js")

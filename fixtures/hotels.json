@@ -1,0 +1,140 @@
+{
+	"status": 1,
+	"message": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 10 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439",
+	"result": {
+		"city": [],
+		"country": [],
+		"hotel": [
+			{
+				"id": "42422",
+				"HotelID": "42422",
+				"Title": "Best Western Hotel Das Tigra",
+				"Country":"\u0410\u0432\u0441\u0442\u0440\u0438\u044f",
+				"CountryID":"3",
+				"City":"\u0412\u0435\u043d\u0430",
+				"CityID":"256",
+				"Stars":"4",
+				"Rating":"8.8",
+				"Image":"http:\/\/hotels.sletat.ru\/i\/p\/42422_0_60_90_1.jpg",
+				"PageURL":"\/countries\/austria\/vienna\/hotel\/tigra\/"
+			},
+			{
+				"id":"5658",
+				"HotelID":"5658",
+				"Title":"Best Western Hotel Elefant",
+				"Country":"\u0410\u0432\u0441\u0442\u0440\u0438\u044f",
+				"CountryID":"3",
+				"City":"\u0417\u0430\u043b\u044c\u0446\u0431\u0443\u0440\u0433",
+				"CityID":"439",
+				"Stars":"4",
+				"Rating":"8.8",
+				"Image":"http:\/\/hotels.sletat.ru\/i\/p\/5658_0_60_90_1.jpg",
+				"PageURL":"\/countries\/austria\/salzburg\/hotel\/best-western-hotel-elefant\/"
+			},
+			{
+				"id":"17442",
+				"HotelID":"17442",
+				"Title":"Best Western Hotel Harmonie",
+				"Country":"\u0410\u0432\u0441\u0442\u0440\u0438\u044f",
+				"CountryID":"3",
+				"City":"\u0412\u0435\u043d\u0430",
+				"CityID":"256",
+				"Stars":"4",
+				"Rating":"9.7",
+				"Image":"http:\/\/hotels.sletat.ru\/i\/p\/17442_0_60_90_1.jpg",
+				"PageURL":"\/countries\/austria\/vienna\/hotel\/harmonie\/"
+			},
+			{
+				"id":"71022",
+				"HotelID":"71022",
+				"Title":"Best Western Hotel Leipziger Hof Innsbruck",
+				"Country":"\u0410\u0432\u0441\u0442\u0440\u0438\u044f",
+				"CountryID":"3",
+				"City":"\u0418\u043d\u0441\u0431\u0440\u0443\u043a",
+				"CityID":"472",
+				"Stars":"4",
+				"Rating":"8.6",
+				"Image":"http:\/\/hotels.sletat.ru\/i\/p\/71022_0_60_90_1.jpg",
+				"PageURL":"\/countries\/austria\/innsbruck\/hotel\/best-western-hotel-leipziger-hof-innsbruck\/"
+			},
+			{
+				"id":"5671",
+				"HotelID":"5671",
+				"Title":"Best Western Hotel Mondschein",
+				"Country":"\u0410\u0432\u0441\u0442\u0440\u0438\u044f",
+				"CountryID":"3",
+				"City":"\u0418\u043d\u0441\u0431\u0440\u0443\u043a",
+				"CityID":"472",
+				"Stars":"4",
+				"Rating":"10.0",
+				"Image":"http:\/\/hotels.sletat.ru\/i\/p\/5671_0_60_90_1.jpg",
+				"PageURL":"\/countries\/austria\/innsbruck\/hotel\/best-western-hotel-mondschein\/"
+			},
+			{
+				"id":"28586",
+				"HotelID":"28586",
+				"Title":"Best Western Hotel Neue Post",
+				"Country":"\u0410\u0432\u0441\u0442\u0440\u0438\u044f",
+				"CountryID":"3",
+				"City":"\u0418\u043d\u0441\u0431\u0440\u0443\u043a",
+				"CityID":"472",
+				"Stars":"4",
+				"Rating":"0.0",
+				"Image":"http:\/\/hotels.sletat.ru\/i\/p\/28586_0_60_90_1.jpg",
+				"PageURL":"\/countries\/austria\/innsbruck\/hotel\/neue-post-insbruk\/"
+			},
+			{
+				"id":"19337",
+				"HotelID":"19337",
+				"Title":"Best Western Hotel Pension Arenberg",
+				"Country":"\u0410\u0432\u0441\u0442\u0440\u0438\u044f",
+				"CountryID":"3",
+				"City":"\u0412\u0435\u043d\u0430",
+				"CityID":"256",
+				"Stars":"4",
+				"Rating":"0.0",
+				"Image":"http:\/\/hotels.sletat.ru\/i\/p\/19337_0_60_90_1.jpg",
+				"PageURL":"\/countries\/austria\/vienna\/hotel\/hotel-pension-arenberg\/"
+			},
+			{
+				"id":"90517",
+				"HotelID":"90517",
+				"Title":"Best Western Plus Hotel Arcadia",
+				"Country":"\u0410\u0432\u0441\u0442\u0440\u0438\u044f",
+				"CountryID":"3",
+				"City":"\u0412\u0435\u043d\u0430",
+				"CityID":"256",
+				"Stars":"3",
+				"Rating":"8.6",
+				"Image":null,
+				"PageURL":"\/countries\/austria\/vienna\/hotel\/best-western-plus-hotel-arcadia\/"
+			},
+			{
+				"id":"21246",
+				"HotelID":"21246",
+				"Title":"Best Western Premier Kaiserhof Wien",
+				"Country":"\u0410\u0432\u0441\u0442\u0440\u0438\u044f",
+				"CountryID":"3",
+				"City":"\u0412\u0435\u043d\u0430",
+				"CityID":"256",
+				"Stars":"4",
+				"Rating":"9.9",
+				"Image":"http:\/\/hotels.sletat.ru\/i\/p\/21246_0_60_90_1.jpg",
+				"PageURL":"\/countries\/austria\/vienna\/hotel\/kaiserhof-wien\/"
+			},
+			{
+				"id":"90707",
+				"HotelID":"90707",
+				"Title":"BEST WESTERN PREMIER Schlosshotel Roemischer Kaiseroemischer Kaiser",
+				"Country":"\u0410\u0432\u0441\u0442\u0440\u0438\u044f",
+				"CountryID":"3",
+				"City":"\u0412\u0435\u043d\u0430",
+				"CityID":"256",
+				"Stars":"4",
+				"Rating":"8.6",
+				"Image":null,
+				"PageURL":"\/countries\/austria\/vienna\/hotel\/best-western-premier-schlosshotel-roemischer-kaiseroemischer-kaiser\/"
+			}
+		]
+	}
+}

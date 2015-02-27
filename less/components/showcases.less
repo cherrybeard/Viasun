@@ -1,0 +1,113 @@
+.resorts {
+	.media-content {
+		display: flex;
+		flex-direction: column;
+	}
+}
+.resort-body,
+.resort-footer {
+	display: flex;
+	justify-content: space-between;
+}
+.resort-body {
+	align-items: center;
+}
+.resort-footer {
+	.small;
+	.list-inline {
+		margin-bottom: 0;	
+	}
+}
+.resort-text {
+	p {
+		height: 54px;
+		line-height: 18px;
+		margin-bottom: 6px;
+		margin-top: 6px;
+		overflow: hidden;
+	}
+	.list-inline {
+		margin-bottom: 0;
+	}
+}
+.resort-image {
+	box-sizing: content-box;
+	height: 100px;
+	width: 140px;
+	&>img {
+		max-width: 100%;	
+	}
+}
+.resort-price {
+	flex-shrink: 0;
+	line-height: 1.2;
+	text-align: right;
+	width: 160px;
+	&>p {
+		margin-top: 0;	
+	}
+}
+.resort-tags {
+	.text-light;
+}
+.tours-seo {
+	.tour-starts {
+		font-weight: 500;
+		width: 25%;
+	}
+	.tour-resort { width: 25%; }
+	.tour-nights { width: 25%; }
+	.tour-price {
+		text-align: right;
+		width: 25%;
+	}
+	.text-price {
+		font-size: @font-size-h3;	
+		font-weight: 500;
+	}
+}
+.hotels-rating {
+	.hotel-number { width: 3%; }
+	.hotel-name { width: 57%; }
+	.hotel-resort { width: 21%; }
+	.hotel-reviews { width: 12%; }
+	.hotel-rating { width: 7%; }
+	.media {
+		.hotel-name {
+			font-size: @font-size-large;
+		}
+	}
+}
+
+.weather-resorts {
+	.media {
+		border-bottom: solid 1px @gray-lighter;
+		padding-bottom: 24px;
+		padding-top: 24px;
+		.weather-day {
+			position: relative;
+			&:before {
+				background-repeat: no-repeat;
+				content: '';
+				display: inline-block;
+				//left: 16px;
+				//position: absolute;
+				height: 24px;
+				margin-right: 8px; 
+				vertical-align: -35%;
+				width: 24px;
+			}
+		}
+	}
+	.weather-resort { width: 25%;}
+	.weather-day {
+		text-align: center;
+		width: 15%;
+	}
+	.weather-resort {
+		font-size: @font-size-large;	
+	}
+}
+.weather-cloudy	{ &:before { background-image: url(http://media.viasun.ru/img/weather/w5.png); } }
+.weather-fair	{ &:before { background-image: url(http://media.viasun.ru/img/weather/w6.png); } }
+.weather-sunny	{ &:before { background-image: url(http://media.viasun.ru/img/weather/w7.png); } }

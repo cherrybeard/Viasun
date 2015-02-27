@@ -1,0 +1,77 @@
+include ./base/footers.jade
+
+doctype html
+head
+	title Viasun2 — Обратная связь
+	include ./base/head.jade
+body
+	include ./base/navbar.jade
+	.header
+		.container
+			h1 Обратная связь
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block
+							.tabpanel
+								ul.nav.nav-lines
+									li.active
+										a(href="#", data-toggle="tab", data-target=".tab-from-private") Частное лицо
+									li
+										a(href="#", data-toggle="tab", data-target=".tab-from-agency") Агентство
+								.tab-content
+									.tab-pane.tab-from-private.active
+										form.form-horizontal.form-feedback
+											.form-group
+												label.col-sm-4.control-label Имя
+												.col-sm-12
+													input.form-control(type="text", placeholder="Ваше имя")
+											.form-group
+												label.col-sm-4.control-label Email
+												.col-sm-12
+													input.form-control(type="text", placeholder="ilove@viasun.ru")
+											.form-group
+												label.col-sm-4.control-label Сообщение
+												.col-sm-12
+													textarea.form-control(placeholder="Опишите ваш вопрос или проблему", rows="6")
+											.form-group
+												.col-sm-12.col-sm-offset-4
+													button.btn.btn-primary(type="submit") Отправить
+									.tab-pane.tab-from-agency
+										form.form-horizontal.form-feedback
+											.form-group
+												label.col-sm-4.control-label Город
+												.col-sm-12
+													input.form-control(type="text", placeholder="Город")
+											.form-group
+												label.col-sm-4.control-label Название агентства
+												.col-sm-12
+													input.form-control(type="text", placeholder="Название агентства")
+											.form-group
+												label.col-sm-4.control-label Имя
+												.col-sm-12
+													input.form-control(type="text", placeholder="Ваше имя")
+											.form-group
+												label.col-sm-4.control-label Телефон
+												.col-sm-12
+													input.form-control(type="text", placeholder="+7...")
+											.form-group
+												label.col-sm-4.control-label Email
+												.col-sm-12
+													input.form-control(type="text", placeholder="ilove@viasun.ru")
+											.form-group
+												label.col-sm-4.control-label Сообщение
+												.col-sm-12
+													textarea.form-control(placeholder="Опишите ваш вопрос или проблему", rows="6")
+											.form-group
+												.col-sm-12.col-sm-offset-4
+													button.btn.btn-primary(type="submit") Отправить
+							
+							
+				.col-md-4.hidden-sm
+					.sidebar
+	+footer-base
+	include ./base/modal-city.jade
+	include ./base/scripts.jade

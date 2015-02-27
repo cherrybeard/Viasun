@@ -1,0 +1,62 @@
+include ./base/sidenav.jade
+include ./base/footers.jade
+
+doctype html
+head
+	title Viasun2 — Эксперт
+	include ./base/head.jade
+body
+	+sidenav-agency("Experts")
+	include ./base/navbar.jade
+	.header
+		.container
+			h1 Эксперт
+	.page
+		.container
+			.row
+				.col-md-12
+					.content
+						.block.block-plaintext.expert-full.expert-recommended
+							.row
+								.col-md-4
+									img.expert-photo(src="http://storage.viasun.ru/agency/odu303rrzx.jpg")
+								.col-md-12
+									h2.expert-name Александра
+									a.expert-agency(href="./agency.html") 1001 тур
+									.expert-contacts
+										.expert-phone.preicon.preicon-phone +7 (983) 323-79-88
+										.expert-icq.preicon.preicon-icq 625-502-024
+									.expert-about
+										p 
+											strong Стаж в&nbsp;туризме:
+											|  5&nbsp;лет
+										p
+											strong Работаю со&nbsp;странами:
+											|  Вьетнам, Египет, Индия, Тайланд	
+										p
+											strong О&nbsp;себе:
+											|  География путешествий: Турция, Тайланд, Египет, Испания, Вьетнам Основные направления: Египет, Турция, Тайланд, Вьетнам, Индонезия, Индия, Кипр, Тунис, Доминикана, Куба, Китай (индивидуальные и групповые туры: пляжный отдых, комбинированные и шоп-туры) Cо школьного возраста я уже точно знала, чем буду заниматься в будущем. Целенаправленно придя в сферу туризма, могу сказать, что с каждым днем удовольствие, которое я получаю от работы, только увеличивается. Моя цель в профессиональной деятельности – дарить людям счастье посредством хорошего и качественного отдыха, моря позитива и специализированной помощи в подборе туров. Самое приятное – это когда Вы возвращаетесь веселыми, отдохнувшими, довольными нашими услугами и с множеством положительных эмоций! Всегда рада новым клиентам и особенно постоянным туристам! Очень приятно видеть Вас в нашем офисе вновь и вновь! Звоните мне или пишите, и я помогу Вам организовать Ваш отдых!
+				.col-md-4
+					.sidebar
+						.banner.banner-stroked.banner-askexpert
+							h3 Задать вопрос
+							form
+								.form-group
+									label.control-label Имя
+									input.form-control(type="text", placeholder="Ваше имя")
+								.form-group
+									label.control-label Телефон
+									input.form-control(type="text", placeholder="Телефон")
+								.form-group
+									label.control-label Email
+									input.form-control(type="text", placeholder="ilove@viasun.ru")
+								.form-group
+									label.control-label Ваш вопрос
+									textarea.form-control(rows="4")
+								.form-group
+									button.btn.btn-warning.btn-fullwidth.btn-lg(type="submit") Отправить
+							
+	+footer-base
+	include ./base/modal-city.jade
+	include ./base/scripts.jade
+

@@ -1,0 +1,76 @@
+.block {
+	border: solid 1px transparent;
+	margin-bottom: 36px;
+	margin-left: -12px;
+	margin-right: -12px;
+	padding: 12px 24px;
+	&>h3 {
+		margin-bottom: 8px;	
+	}
+	&>h2 {
+		margin-bottom: 16px;	
+	}
+}
+.block-stroked {
+	border-color: @gray-lighter;
+	border-radius: 4px;
+	padding-bottom: 24px;
+	padding-top: 24px;
+}
+.block-blue {
+	background-color: @brand-primary;
+	border-radius: 4px;
+	color: white;
+	padding-bottom: 24px;
+	padding-top: 24px;
+	a {
+		color: @color-blue-lighter;
+		&:hover {
+			color: lighten(@color-blue-lighter, 5%);
+		}
+	}
+}
+.block-readmore {
+	font-size: @font-size-large;
+	margin-top: 16px;
+	text-align: right;
+	&:before {
+		color: @gray-light-text;
+		content: "\e602";
+		font-family: @font-family-helio;
+		font-size: 120%;
+		margin-right: 5px;
+		vertical-align: -10%;
+	}
+}
+.block-header {
+	align-items: baseline;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 24px;
+}
+.block-header-nav {
+	background-color: @gray-light-bg;
+	border-radius: 5px;
+	display: flex;
+	font-size: @font-size-large;
+	padding: 10px 20px 8px;
+	a {
+		flex-shrink: 0;
+		float: left;
+		margin-right: 24px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+.block-plaintext {
+	font-size: @font-size-large;
+	line-height: 1.5;
+	h3 {
+		font-weight: 600;	
+	}
+	ul {
+		line-height: 1.4;	
+	}
+}
